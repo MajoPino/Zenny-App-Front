@@ -1,0 +1,92 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Teko', sans-serif; /* Aplica la fuente Teko */
+    background-color: #000;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    height: 100vh;
+    background-image: url(''); /* URL de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    background-color: #32A873; /* Cambiar a verde */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+}
+
+.navbar-collapse {
+    background-color: #32A873; /* Fondo verde para el menú desplegable */
+}
+
+.logo {
+    height: 40px;
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.nav-item .btn-outline-light {
+    border: 2px solid #fff; /* Borde blanco en el botón "Crea tu cuenta!" */
+    color: #fff;
+    margin-bottom: 10px;
+    
+}
+
+.nav-item .btn-light {
+    border: 2px solid #fff; /* Borde blanco en el botón "Ingresa" */
+    color: #fff;
+    align-items: center;
+}
+
+.nav-item .btn-light i {
+    font-size: 1.5rem; /* Tamaño del ícono de flecha */
+    color: #32A873;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-top: 20px;
+    margin-left: 25px;
+    color: #C0E1C8;
+    text-align: left; 
+}
+
+.person-image {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0px;
+}
+
+footer {
+    font-size: 1.2rem;
+    color: #6c757d;
+    background-color: #32A873; /* Fondo verde para el footer */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+}
+
+.btn-success {
+    background-color: #32A873;
+    border: 1px solid white;
+    margin-bottom: 15px ;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-success:hover {
+    background-color: #32A873;
+}
+

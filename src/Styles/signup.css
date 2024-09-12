@@ -1,0 +1,61 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Teko', sans-serif;
+}
+.navbar {
+    background-color: #32A873;
+    padding: 10px 20px;
+}
+.logo {
+    height: 40px;
+}
+.navbar-brand {
+    font-size: 24px;
+}
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.form-control {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.form-control::placeholder{
+    color: #32A873;
+    opacity: 3;
+}
+.form-control.is-invalid {
+    border-color: #E73A3A;
+}
+.invalid-feedback {
+    color: #E73A3A;
+    font-size: 14px;
+}
+.btn-login {
+    background-color: #32A873;
+    color: #fff;
+    border-radius: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+.footer {
+    background-color: #32A873;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+.footer p {
+    margin: 0;
+    font-size: 12px;
+}
+.create-account {
+    color: #32A873;
+    text-decoration: none;
+}
+.create-account:hover {
+    text-decoration: underline;
+}
