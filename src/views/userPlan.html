@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenny - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/Styles/userPlan.css" />
+</head>
+
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark">
+        <navbar class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/public/imgs/ZennyBannerMint 1.png" alt="Zenny" class="logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light rounded-pill" href="/src/views/signup.html">Crea tu
+                            cuenta!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light rounded-pill" href="/src/views/Login.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                            </svg>
+                            Ingresa</a>
+                    </li>
+                </ul>
+            </div>
+        </navbar>
+    </header>
+
+    <main class="d-flex flex-column">
+        <section class="text-center py-1" id="user-plan-title">
+            <h1 id="user-plan-tile">
+                Escoge un plan!
+            </h1>
+        </section>
+        <div id="restructuration-space" class="gap-2">
+            <section class="border border-1 rounded-4" id="box-premium">
+                <article class="m-3">
+                    <article class="d-flex flex-column align-items-center">
+                        <div class="d-flex gap-3 justify-content-center pb-2" id="plan-premium-title">
+                            <object type="image/svg+xml" data="../../public/imgs/crownIcon.svg" width="30" height="30" id="crown">
+                                Your browser does not support SVG
+                            </object>
+                            <h2 class="m-0 p-p">
+                                Plan Premium
+                            </h2>
+                            <object type="image/svg+xml" data="../../public/imgs/crownIcon.svg" width="30" height="30" id="crown">
+                                Your browser does not support SVG
+                            </object>
+                        </div>
+                        <p class="mb-0" id="amount">$30.000,00 COP</p>
+                    </article>
+
+                    <hr>
+
+                    <article class="py-2" id="benefit-1">
+                        <h3 id="title">Acceso a los gráficos</h3>
+                        <ul class="ps-4 m-0">
+                            <li>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <p class="mb-0">Grafico de Pastel</p>
+                                    <object id="cake" type="image/svg+xml" data="../../public/imgs/diagrama pastel grafico.svg"
+                                        width="20" height="20">
+                                        Your browser does not support SVG
+                                    </object>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <p class="mb-0">Barras</p>
+                                    <object id="bar" type="image/svg+xml" data="../../public/imgs/grafico de barra.svg"
+                                        width="30" height="30">
+                                        Your browser does not support SVG
+                                    </object>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="d-flex gap-1 align-items-center">
+                                    <p class="mb-0">Gastos VS Ingresos</p>
+                                    <object id="vs" type="image/svg+xml" data="../../public/imgs/gastos vs ingresos grafico.svg"
+                                        width="30" height="30">
+                                        Your browser does not support SVG
+                                    </object>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-2">
+                        <p class="my-2">Recomendaciones especializadas</p>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-3">
+                        <p class="my-2">Acceso temprano a nuevas versiones de la app</p>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-4">
+                        <p class="my-2">Apoyo a los desarrolladores</p>
+                    </article>
+
+                    <hr>
+                </article>
+            </section>
+
+            <section class="p-3" id="box-basic">
+                <article class="p-3">
+
+
+                    <article class="d-flex flex-column align-items-center" id="plan-basic-title">
+                        <h2 class=" mb-0 pb-0">
+                            Plan Basic
+                        </h2>
+                        <p class=" m-0 mt-0 mb-2" id="subtitle">
+                            Gratis
+                        </p>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-1b">
+                        <p class="py-2 m-0">
+                            Historial de movimientos mensuales
+                        </p>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-2b">
+                        <p class="py-2 m-0">
+                            Asignar categorias a los movimientos
+                        </p>
+                    </article>
+
+                    <hr>
+
+                    <article class="text-center" id="benefit-3b">
+                        <p class="py-2 m-0">
+                            Ver el total de tus movimientos mas el calculo de <br>estos en conjunto
+                        </p>
+                    </article>
+                    <hr>
+                </article>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© Zenny - 2024 - Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
