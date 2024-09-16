@@ -240,7 +240,7 @@ input.is-invalid::placeholder {
         height: 100%;
 
         #plan-basic-title {
-            font-size: 100%;
+            font-size: 150%;
         }
         #subtitle{
             font-size: 300%;
