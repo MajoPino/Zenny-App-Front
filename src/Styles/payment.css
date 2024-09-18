@@ -91,7 +91,11 @@ footer {
   justify-content: center;
   justify-content: space-between;
   align-items: center;
-  width: 450px;
+  width: 300px;
+}
+
+.crown{
+  height: 35px;
 }
 
 .textPremium {
@@ -105,13 +109,13 @@ footer {
   bottom: 25px;
 
   & h2 {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 300;
     height: 62px;
   }
 
   & h4 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
   }
 }
@@ -119,6 +123,7 @@ footer {
 .paymentBox{
   display: flex;
   flex-wrap: wrap;
+  width: 320px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -129,12 +134,42 @@ footer {
   
   & h3 {
     font-size: 40px;
-    font-weight: 600;
-    width: 400px;
+    font-weight: 400;
+    width: 220px;
     text-align: center;
     margin-bottom: 20px;
     font-family: "Alumni Sans", sans-serif;
   }
+}
+
+.paymentMethods{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+.btn-link img{
+  width: 165px;
+  border: #32a873 3px solid;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.btn-link img:hover{
+  border: #e2ffe9 4px solid;
+}
+
+.vectors{
+  width: 1600px;
+  position: fixed;
+  left: 0;
+  right: -5000;
+  top: 0;
+  bottom: 0;
+  z-index: -20;
 }
 
 .btn-secondary {
@@ -154,8 +189,7 @@ footer {
   color: var(--light-mint);
 }
 
-/* Versión desktop */
-
+/* Versión tablet */
 @media (min-width: 768px) {
   .navbar {
     font-size: 36px;
@@ -187,6 +221,243 @@ footer {
   .button-create-account {
     display: flex;
     justify-content: center;
+  }
+
+  /*----------------------  */
+
+  .titlePremium{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+  }
+
+  .crown{
+    height: 50px;
+  }
+  
+  .textPremium {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-top: 50px;
+    position: relative;
+    bottom: 25px;
+  
+    & h2 {
+      font-size: 70px;
+      font-weight: 300;
+      height: 62px;
+    }
+  
+    & h4 {
+      font-size: 40px;
+      font-weight: 500;
+    }
+  }
+  
+  
+.paymentBox{
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--dark-grey);
+  border: #32a873 2px solid;
+  border-radius: 20px;
+  
+  & h3 {
+    font-size: 50px;
+    font-weight: 400;
+    width: 440px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Alumni Sans", sans-serif;
+  }
+}
+
+.paymentMethods{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.btn-link img{
+  width: 165px;
+  border: #32a873 3px solid;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.btn-link img:hover{
+  border: #e2ffe9 4px solid;
+}
+
+.vectors{
+  width: 1800px;
+  position: fixed;
+  left: 0;
+  right: -5000;
+  top: 0;
+  bottom: 0;
+  z-index: -20;
+}
+
+  
+  .btn-secondary {
+    background-color: var(--mint-green);
+    border: 2px solid var(--light-green);
+    color: var(--light-green);
+    margin-bottom: 15px;
+    width: 200px;
+    font-size: 28px;
+    font-weight: lighter;
+    margin: 0px 25px 25px;
+  }
+
+  .footer p {
+    font-size: 24px;
+  }
+}
+
+/* Versión desktop */
+
+@media (min-width: 900px) {
+  .navbar {
+    font-size: 36px;
+  }
+
+  .text-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .text-center h1 {
+    font-size: 90px;
+    text-align: left;
+  }
+
+  .landing-page {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .person-image {
+    margin-left: 100px;
+    width: 400px;
+    height: 479px;
+  }
+
+  .button-create-account {
+    display: flex;
+    justify-content: center;
+  }
+
+  /*----------------------  */
+
+  .titlePremium{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+  }
+
+  .crown{
+    height: 50px;
+  }
+  
+  .textPremium {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-top: 50px;
+    position: relative;
+    bottom: 25px;
+  
+    & h2 {
+      font-size: 70px;
+      font-weight: 300;
+      height: 62px;
+    }
+  
+    & h4 {
+      font-size: 40px;
+      font-weight: 500;
+    }
+  }
+  
+  .paymentBox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark-grey);
+    border: #32a873 2px solid;
+    border-radius: 20px;
+    
+    & h3 {
+      font-size: 50px;
+      font-weight: 400;
+      width: 500px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: "Alumni Sans", sans-serif;
+    }
+  }
+
+  .paymentMethods{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-link img{
+    width: 165px;
+    border: #32a873 3px solid;
+    border-radius: 10px;
+  }
+
+  .vectors{
+    width: 1500px;
+    position: fixed;
+    left: 0;
+    right: -5000;
+    top: 0;
+    bottom: 0;
+    z-index: -20;
+  }
+  
+  .btn-secondary {
+    background-color: var(--mint-green);
+    border: 2px solid var(--light-green);
+    color: var(--light-green);
+    margin-bottom: 15px;
+    width: 200px;
+    font-size: 28px;
+    font-weight: lighter;
+    margin: 0px 25px 25px;
   }
 
   .footer p {
