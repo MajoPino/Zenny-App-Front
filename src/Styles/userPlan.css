@@ -11,6 +11,9 @@
     --bluelsh-pine: #064E2B;
 }
 
+a{
+    color: inherit;
+}
 body {
     background-color: #121212;
     color: #E2FFE9;
@@ -93,6 +96,19 @@ body {
 .create-account:hover {
     text-decoration: underline;
 }
+
+#box-premium {
+    border: 2px solid transparent; /* Borde transparente para que el efecto sea limpio */
+    border-radius: 0.5rem; /* Ajusta el radio del borde */
+    padding: 1.5rem; /* Espaciado interno */
+    transition: box-shadow 0.3s ease-in-out; /* Transición suave para el box-shadow */
+}
+
+#box-premium:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);/* Escala para un efecto adicional */
+    animation-fill-mode: forwards;
+}
+
 
 /* Desktop Styles */
 @media (min-width: 768px) {
