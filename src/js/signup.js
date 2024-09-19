@@ -1,88 +1,85 @@
-document.querySelector('form').addEventListener('submit', function (e) {
+let form = document.getElementsByTagName('form');
+let name = document.getElementById('name');
+let lastName = document.getElementById('lastname');
+let email = document.getElementById('email');
+let password = document.getElementById('password');
+let password2 = document.getElementById('password-2')
+let erroMessage = document.getElementById('error-message')
+
+let url = "https://zenny.azurewebsites.net/swagger/api/userCreate/createUser"
+
+
+guardian();
+form[0].addEventListener('submit', function (e) {
     e.preventDefault();
-
-    // Obtiene los campos del formulario
-    const nameInput = document.getElementById('name');
-    const lastnameInput = document.getElementById('lastname');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-
-    let valid = true;
-
-    // Validación del nombre
-    if (nameInput.value.trim() === '') {
-        nameInput.classList.add('is-invalid');
-        valid = false;
+    if (name.value === '') {
+        name.classList.add('is-invalid');
     } else {
-        nameInput.classList.remove('is-invalid');
+        name.classList.remove('is-invalid');
     }
 
-    // Validación del apellido
-    if (lastnameInput.value.trim() === '') {
-        lastnameInput.classList.add('is-invalid');
-        valid = false;
+    if (lastName.value === '') {
+        lastName.classList.add('is-invalid');
     } else {
-        lastnameInput.classList.remove('is-invalid');
+        lastName.classList.remove('is-invalid');
     }
 
-    // Validación del email
-    if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
-        emailInput.classList.add('is-invalid');
-        valid = false;
+    if (email.value === '') {
+        email.classList.add('is-invalid');
     } else {
-        emailInput.classList.remove('is-invalid');
+        email.classList.remove('is-invalid');
     }
 
-    // Validación de la contraseña
-    if (passwordInput.value.trim() === '') {
-        passwordInput.classList.add('is-invalid');
-        valid = false;
+    if (password.value === '') {
+        password.classList.add('is-invalid');
     } else {
-        passwordInput.classList.remove('is-invalid');
+        password.classList.remove('is-invalid');
     }
 
-    // Validación de la confirmación de la contraseña
-    if (confirmPasswordInput.value.trim() === '' || confirmPasswordInput.value !== passwordInput.value) {
-        confirmPasswordInput.classList.add('is-invalid');
-        valid = false;
+    if (password2.value === '') {
+        password2.classList.add('is-invalid');
     } else {
-        confirmPasswordInput.classList.remove('is-invalid');
+        password2.classList.remove('is-invalid');
     }
 
-    // Si todos los campos son válidos, conecta con el API
-    if (valid) {
-        const newUser = {
-            name: nameInput.value,
-            lastname: lastnameInput.value,
-            email: emailInput.value,
-            password: passwordInput.value
-        };
+    verifyUserExistence(name,lastName,email,password,password2)
+});
 
-        // Conectar al API simulada de JSONPlaceholder
-        fetch('https://jsonplaceholder.typicode.com/users', {
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if (verification == "true") {
+        window.location.href = "./"
+    }
+}
+
+async function verifyUserExistence(name,lastName,email,password,password2) {
+    let response = await fetch(`${url}?email=${email.value}`)
+    let data = await response.json()
+
+
+    if (data.length === 1) {
+        erroMessage.classList.add("is-invalid")
+    }
+    else {
+
+        let newUser = {
+            "id":0,
+            "name":name.value,
+            "lastName":lastName.value,
+            "email": email.value,
+            "password": password.value,
+            "subscriptionTypesId":1
+        }
+        await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newUser)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Cuenta creada exitosamente:', data);
-                alert('¡Cuenta creada exitosamente!');
-                // Redireccionar a la página de login después del éxito
-                window.location.href = '/src/views/Login.html';
-            })
-            .catch(error => {
-                console.error('Error al crear la cuenta:', error);
-                alert('Ocurrió un error al crear la cuenta.');
-            });
+        localStorage.setItem("access", true)
+        localStorage.setItem("email",email.value)
+        window.location.href = "./"
     }
-});
 
-// Función para validar el formato del email
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
 }
