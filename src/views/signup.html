@@ -64,7 +64,7 @@
     <!-- Contenedor del login -->
     <div class="login-container text-center">
         <h2>Crea tu cuenta</h2>
-        <form>
+        <form id="signup-form">
             <div class="mb-3">
                 <input type="name" class="form-control" id="name" placeholder="Nombre">
                 <div class="invalid-feedback">
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control" id="password" placeholder="confirma tu Contraseña">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="confirma tu Contraseña">
                 <div class="invalid-feedback">
                     La Contraseña no coincide.
                 </div>
@@ -106,27 +106,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const emailInput = document.getElementById('email');
-            const passwordInput = document.getElementById('password');
-
-            // Simulación de validación
-            if (emailInput.value === '') {
-                emailInput.classList.add('is-invalid');
-            } else {
-                emailInput.classList.remove('is-invalid');
-            }
-
-            if (passwordInput.value === '') {
-                passwordInput.classList.add('is-invalid');
-            } else {
-                passwordInput.classList.remove('is-invalid');
-            }
-        });
-    </script>
-
+    <script src="/src/js/signup.js"></script>
 </body>
 </html>
