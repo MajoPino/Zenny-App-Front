@@ -98,14 +98,26 @@ body {
 }
 
 #box-premium {
-    border: 2px solid transparent; /* Borde transparente para que el efecto sea limpio */
-    border-radius: 0.5rem; /* Ajusta el radio del borde */
-    padding: 1.5rem; /* Espaciado interno */
-    transition: box-shadow 0.3s ease-in-out; /* Transición suave para el box-shadow */
+    border: 2px solid transparent; 
+    border-radius: 0.5rem;
+    padding: 1.5rem; 
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 #box-premium:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);/* Escala para un efecto adicional */
+    box-shadow: 0 0 10px var(--light-mint), 0 0 20px var(--light-mint), 0 0 30px var(--light-mint);
+    animation-fill-mode: forwards;
+}
+
+#box-basic {
+    border: 2px solid transparent; 
+    border-radius: 0.5rem;
+    padding: 1.5rem; 
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#box-basic:hover {
+    box-shadow: 0 0 10px var(--dark-pine), 0 0 20px var(--dark-pine), 0 0 30px var(--dark-pine);
     animation-fill-mode: forwards;
 }
 
