@@ -163,7 +163,7 @@ footer {
 }
 
 .vectors{
-  width: 1600px;
+  width: 350vw;
   position: fixed;
   left: 0;
   right: -5000;
@@ -304,7 +304,7 @@ footer {
 }
 
 .vectors{
-  width: 1800px;
+  width: 255vw;
   position: fixed;
   left: 0;
   right: -5000;
@@ -440,7 +440,7 @@ footer {
   }
 
   .vectors{
-    width: 1500px;
+    width: 100vw;
     position: fixed;
     left: 0;
     right: -5000;
