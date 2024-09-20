@@ -177,6 +177,58 @@ h1, h2, h3 {
     width: 50%;
 }
 
+
+
+
+/* Modal styling */
+.modal-content {
+    background-color: var(--dark-grey);
+    border-radius: 15px;
+    color: var(--light-mint);
+}
+
+.modal-header h2 {
+    color: var(--light-green);
+    font-family: 'Teko', sans-serif;
+    font-size: 35px;
+}
+
+.form-label {
+    color: var(--light-green);
+    font-family: 'Alumni Sans';
+}
+
+.form-select, .form-control {
+    background-color: var(--dark-grey);
+    color: var(--light-mint);
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+}
+
+.input-group-text {
+    background-color: var(--dark-grey);
+    color: var(--light-green);
+    border: 2px solid var(--light-green);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--light-green);
+    color: var(--light-green);
+}
+
+.btn-primary {
+    background-color: var(--light-green);
+    color: var(--dark-grey);
+}
+
+.modal-footer button {
+    width: 48%;
+    padding: 10px;
+}
+
+
+
 @media (min-width: 768px) {
 
     .saldo-container{
