@@ -150,6 +150,7 @@ h1, h2, h3 {
 }
 .edit-date {
     background: none;
+    border: none;
 }
 .sticky-buttons {
     position: fixed;

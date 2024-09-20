@@ -28,12 +28,24 @@ function renderMovements(filter = 'all') {
         filteredMovements.forEach((mov, index) => {
             const row = document.createElement('div');
             row.classList.add(mov.tipe === 'ingreso' ? 'income' : 'expense');
-
-            row.innerHTML = `
+            
+            if (row.classList.contains("income")) {
+                row.innerHTML += `                
+                <span>Ingreso</span>
+                <span>$${mov.value.toLocaleString('es-CO')}</span>
+                <span class= "me-1">${mov.date}</span> 
+                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Green.png" alt="Edit" width="20" height="20"></button>`;
+            table.appendChild(row);
+            }
+            else{console.log(row.classList)
+                row.innerHTML += `                
                 <span>${mov.concept}</span>
                 <span>$${mov.value.toLocaleString('es-CO')}</span>
-                <span>${mov.date} <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Green.png" alt="Edit" width="20" height="20"></button></span>`;
+                <span class= "me-1">${mov.date}</span> 
+                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Red.png" alt="Edit" width="20" height="20"></button>`;
             table.appendChild(row);
+            }
+
         });
 
         // Add event listeners to all edit buttons
@@ -109,6 +121,31 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
     }
 });
 
+
+
+// Function to add a new income
+document.getElementById('saveIncomeButton').addEventListener('click', function () {
+    const value = parseFloat(document.getElementById('income-value').value);
+    const date = document.getElementById('income-date').value;
+
+    if (value && date) {
+        // Push new income to the movements array
+        movements.push({ tipe: 'ingreso', concept: "varios", value: value, date: date });
+
+        // Re-render movements table with new income
+        renderMovements();
+
+        // Close the modal after saving
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addIncomeModal'));
+        modal.hide();
+
+        // Clear form after submission
+        document.getElementById('addIncomeForm').reset();
+    } else {
+        alert('Por favor, complete todos los campos.');
+    }
+});
+
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
     dateUpdate();
@@ -127,7 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open modal for adding a new income
     document.getElementById('btn-agregar-ingreso').addEventListener('click', () => {
-        alert('Agregar nuevo ingreso (Funcionalidad en construcción)');
+        const addIncomeModel  =new bootstrap.Modal(document.getElementById('addIncomeModal'));
+        addIncomeModel.show();
     });
 
     // Enable graphics if user has premium
