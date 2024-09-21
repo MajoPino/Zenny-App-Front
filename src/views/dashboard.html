@@ -154,6 +154,37 @@
     </div>
 
 
+<!-- modal for editing an income -->
+    <div class="modal fade" id="editIncomeModal" tabindex="-1" aria-labelledby="editIncomeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editIncomeModalLabel">Editar Ingreso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editIncomeForm">
+                    <div class="mb-3">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-income-value" class="form-label">Valor</label>
+                        <input type="number" class="form-control" id="edit-income-value">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-income-date" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="edit-income-date">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="deleteIncomeButton">Eliminar</button>
+                <button type="button" class="btn btn-success" id="saveEditIncomeButton">guardar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
 <!-- modal for adding a new income -->
     <div class="modal fade" id="addIncomeModal" tabindex="-2" aria-labelledby="addIncomeModalLabel"
         aria-hidden="true">
