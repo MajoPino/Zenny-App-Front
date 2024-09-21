@@ -28,22 +28,33 @@ function renderMovements(filter = 'all') {
         filteredMovements.forEach((mov, index) => {
             const row = document.createElement('div');
             row.classList.add(mov.tipe === 'ingreso' ? 'income' : 'expense');
+            row.classList.add("d-flex");
+            row.classList.add("justify-content-between");
 
             if (row.classList.contains("income")) {
                 row.innerHTML += `                
+                <span class="w-50 d-flex justify-content-between">
                 <span>Ingreso</span>
                 <span>$${mov.value.toLocaleString('es-CO')}</span>
-                <span class= "me-1">${mov.date}</span> 
-                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Green.png" alt="Edit" width="20" height="20"></button>`;
+                </span>
+
+                <span class="w-50 d-flex justify-content-between">
+                <span class= "me-1 ps-5">${mov.date}</span> 
+                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Green.png" alt="Edit" width="20" height="20"></button>
+                </span>`;
                 table.appendChild(row);
             }
             else {
-                console.log(row.classList)
-                row.innerHTML += `                
+                row.innerHTML += `
+                <span class="w-50 d-flex justify-content-between">                
                 <span>${mov.concept}</span>
                 <span>$${mov.value.toLocaleString('es-CO')}</span>
-                <span class= "me-1">${mov.date}</span> 
-                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Red.png" alt="Edit" width="20" height="20"></button>`;
+                </span>                
+                
+                <span class="w-50 d-flex justify-content-between"> 
+                <span class= "me-1 ps-5">${mov.date}</span> 
+                <button class="edit-date" data-index="${index}"><img src="/public/imgs/Pencil Red.png" alt="Edit" width="20" height="20"></button>
+                </span>`;
                 table.appendChild(row);
             }
 
