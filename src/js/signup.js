@@ -1,3 +1,10 @@
+import Swal from './node_modules//sweetalert2/dist/sweetalert2.all.js';
+import Swal from "sweetalert2"
+import 'sweetalert2/src/scss'
+import '@sweetalert2/theme-dark/dark.css'
+
+
+
 let form = document.getElementsByTagName('form');
 let name = document.getElementById('name');
 let lastName = document.getElementById('lastname');
@@ -6,13 +13,13 @@ let password = document.getElementById('password');
 let password2 = document.getElementById('password-2')
 let erroMessage = document.getElementById('error-message')
 
-let url = "https://zenny.azurewebsites.net/swagger/api/userCreate/createUser"
+let url = "https://zenny.azurewebsites.net/api/v1/User/Register"
 
 
-guardian();
+// guardian();
 form[0].addEventListener('submit', function (e) {
     e.preventDefault();
-    if (name.value === '') {
+    if (name.value == '') {
         name.classList.add('is-invalid');
     } else {
         name.classList.remove('is-invalid');
@@ -45,41 +52,55 @@ form[0].addEventListener('submit', function (e) {
     verifyUserExistence(name,lastName,email,password,password2)
 });
 
-function guardian() {
-    let verification = localStorage.getItem("access")
-    if (verification == "true") {
-        window.location.href = "./"
-    }
-}
+// function guardian() {
+//     let verification = localStorage.getItem("access")
+//     if (verification == "true") {
+//         window.location.href = "./"
+//     }
+// }
 
 async function verifyUserExistence(name,lastName,email,password,password2) {
-    let response = await fetch(`${url}?email=${email.value}`)
-    let data = await response.json()
 
+        try{
 
-    if (data.length === 1) {
-        erroMessage.classList.add("is-invalid")
-    }
-    else {
+            let newUser = {
+                "Name":name.value,
+                "LastName":lastName.value,
+                "Email": email.value,
+                "Password": password.value,
+                "SubscriptionTypesId":1
+            }
 
-        let newUser = {
-            "id":0,
-            "name":name.value,
-            "lastName":lastName.value,
-            "email": email.value,
-            "password": password.value,
-            "subscriptionTypesId":1
+            let response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUser)
+            })
+
+            if (response.ok)
+            {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Buen trabajo!',
+                    text: 'Usuario registrado correctamente',
+                    showConfirmButton: false,
+                    timer: 1900
+                  });
+                  
+                window.location.href = "./Login.html"
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... ¡Algo salio mal!',
+                    text: 'Intentalo de nuevo',
+                  });
+                console.log("Error en la solicitud: ", response.status);
+
+            }
+        }catch(error){
+            console.error
         }
-        await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newUser)
-        })
-        localStorage.setItem("access", true)
-        localStorage.setItem("email",email.value)
-        window.location.href = "./"
-    }
-
+        
 }

@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@sweetalert2/theme-dark": "^5.0.18",
     "vite": "^5.4.1"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "sweetalert2": "^11.14.0"
   }
 }
