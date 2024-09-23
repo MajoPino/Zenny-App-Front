@@ -1,10 +1,10 @@
-import axios, { AxiosInstance } from 'axios';
+import Axios, { Axios } from 'axios';
 
 export const BASE_URL = "https://zenny.azurewebsites.net/api/";
 
 export function httpService() {
   
-  const http: axios.create({
+  Axios.create({
     baseURL: BASE_URL,
   });
 
