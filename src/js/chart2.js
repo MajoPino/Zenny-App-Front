@@ -2,6 +2,7 @@ import Chart from 'chart.js/auto';
 
 const ctx = document.getElementById('chart2');
 
+
 const red = '#EE5454';
 const green = '#65D8A4';
 const blue = '#6F86FF';
@@ -15,7 +16,7 @@ const purple = '#BB76F1';
 const categories = ['Hogar', 'Salud', 'Arriendo', 'Facturas y mensualidades', 'Alimentación', 'Transporte', 'Entretenimiento', 'Ropa', 'Varios'];
 const dataNumber = [10000, 30000, 70000, 90000, 50000, 90000, 40000, 50000, 10000]
 const options = {
-  responsive: true,
+  responsive: false,
   plugins: {
     legend: {
       display: false,
@@ -30,10 +31,10 @@ const options = {
       ticks: {
         font: {
           family: 'teko', // Cambia la fuente de las etiquetas del eje x
-          size: 15, // Cambia el tamaño de la fuente de las etiquetas del eje x
+          size: 1, // Cambia el tamaño de la fuente de las etiquetas del eje x
           weight: 100,
         },
-        color: '#c0e1c8',
+        color: '#121212',
       },
     },
     y: {
@@ -44,7 +45,7 @@ const options = {
       ticks: {
         font: {
           family: 'teko', // Cambia la fuente de las etiquetas del eje x
-          size: 19, // Cambia el tamaño de la fuente de las etiquetas del eje x
+          size: 1, // Cambia el tamaño de la fuente de las etiquetas del eje x
         },
       },
     },

@@ -100,10 +100,34 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+.chart-box-2{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.chart-box-3{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #chart1{
   width: 700px;
+}
+
+#chart2{
+  height: 400px;
+  width: 400px;
 }
 
 .tableChart1{
@@ -130,6 +154,26 @@ thead{
   width: 100%;
   font-weight: 400;
   font-size: x-large;
+}
+
+.gastos1{
+  background-color: var(--red-error);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
+}
+
+.ingresos1{
+  background-color: var(--light-green);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
 }
 
 .hogar1{
