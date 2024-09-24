@@ -1,7 +1,9 @@
 import Chart from 'chart.js/auto';
 import { GenerateArray } from './Diagrams/byCategoryDiagrmas';
-const ctx = document.getElementById('chart2');
+import { GenerateInfo } from './Diagrams/IncomOutcomeDgr';
 
+const id = 1;
+const ctx = document.getElementById('chart2');
 
 const red = '#EE5454';
 const green = '#65D8A4';
@@ -71,4 +73,96 @@ const options = {
     options: options
   });
 
-  const PieSpents = document.getElementById('PieSpents');
+//----------------------------------------------------------------
+
+// Dropdown table content
+
+const array = await GenerateArray(id);
+
+const HogarCat = array[0];
+const SaludCat = array[1];
+const ArriendoCat = array[2];
+const FacturasMensualidadesCat = array[3];
+const AlimentacionCat = array[4];
+const TransporteCat = array[5];
+const EntretenimientoCat = array[6];
+const RopaCat = array[7];
+const VariosCat = array[8];
+
+const arrayTwo = await GenerateInfo(id);
+const outcomes = arrayTwo[0];
+
+console.log(`
+  ${HogarCat}
+  ${SaludCat}
+  ${ArriendoCat}
+  ${FacturasMensualidadesCat}
+  ${AlimentacionCat}
+  ${TransporteCat}
+  ${EntretenimientoCat}
+  ${RopaCat}
+  ${VariosCat}
+Total: ${outcomes}`);
+
+const PieSpents = document.getElementById('PieSpents');
+
+PieSpents.innerHTML = `
+<tr class="hogar1">
+  <th scope="row"><i class="bi bi-house-fill"></i></th>
+  <td>Hogar</td>
+  <td>$${HogarCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="salud1">
+  <th scope="row"><i class="bi bi-bandaid-fill"></i></th>
+  <td>Salud</td>
+  <td>$${SaludCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="arriendo1">
+  <th scope="row"><i class="bi bi-building-exclamation"></i></th>
+  <td>Arriendo</td>
+  <td>$${ArriendoCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="facturas1">
+  <th scope="row"><i class="bi bi-receipt"></i></th>
+  <td>Facturas y mensualidades</td>
+  <td>$${FacturasMensualidadesCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="alimentacion1">
+  <th scope="row"><i class="bi bi-basket2-fill"></i></th>
+  <td>Alimentación</td>
+  <td>$${AlimentacionCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="transporte1">
+  <th scope="row"><i class="bi bi-car-front-fill"></i></th>
+  <td>Transporte</td>
+  <td>$${TransporteCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="entretenimiento1">
+  <th scope="row"><i class="bi bi-emoji-smile-fill"></i></th>
+  <td>Entretenimiento</td>
+  <td>$${EntretenimientoCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="ropa1">
+  <th scope="row"><img src="../../public/imgs/shirt.svg" alt="shirt"></th>
+  <td>Ropa</td>
+  <td>$${RopaCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="varios1">
+  <th scope="row"><i class="bi bi-box-seam-fill"></i></th>
+  <td>Varios</td>
+  <td>$${VariosCat}</td>
+  <td>10%</td>
+</tr>
+<tr class="total1">
+  <td colspan="2">TOTAL</td>
+  <td>$${outcomes}</td>
+</tr>
+`;

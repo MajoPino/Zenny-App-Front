@@ -1,5 +1,8 @@
 import Chart from 'chart.js/auto';
 import { GenerateArray } from './Diagrams/byCategoryDiagrmas';
+import { GenerateInfo } from './Diagrams/IncomOutcomeDgr';
+
+const id = 1;
 
 const DateToday = new Date();
 const dayToday = DateToday.getDate();
@@ -77,7 +80,7 @@ const cyan = '#5FDEEF';
 const purple = '#BB76F1';
 
 const categories = ['Hogar', 'Salud', 'Arriendo', 'Facturas y mensualidades', 'Alimentación', 'Transporte', 'Entretenimiento', 'Ropa', 'Varios'];
-const dataNumber = await GenerateArray(1)
+const dataNumber = await GenerateArray(id)
 const options = {
   responsive: false,
   plugins: {
@@ -115,21 +118,110 @@ const options = {
   },
 };
 
- new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: categories,
-      datasets: [{
-        label: 'Total',
-        data: dataNumber,
-        borderWidth: 1,
-        backgroundColor: [
-            green, mint, cyan, blue, purple, pink, red, orange, yellow
-        ],
-        borderColor: [
-            green, mint, cyan, blue, purple, pink, red, orange, yellow
-        ]
-      }]
-    },
-    options: options
-  });
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: categories,
+    datasets: [{
+      label: 'Total',
+      data: dataNumber,
+      borderWidth: 1,
+      backgroundColor: [
+        green, mint, cyan, blue, purple, pink, red, orange, yellow
+      ],
+      borderColor: [
+        green, mint, cyan, blue, purple, pink, red, orange, yellow
+      ]
+    }]
+  },
+  options: options
+});
+
+//----------------------------------------------------------------
+
+// Dropdown table content
+
+const array = await GenerateArray(id);
+
+const HogarCat = array[0];
+const SaludCat = array[1];
+const ArriendoCat = array[2];
+const FacturasMensualidadesCat = array[3];
+const AlimentacionCat = array[4];
+const TransporteCat = array[5];
+const EntretenimientoCat = array[6];
+const RopaCat = array[7];
+const VariosCat = array[8];
+
+const arrayTwo = await GenerateInfo(id);
+const outcomes = arrayTwo[0];
+
+/* console.log(`
+  ${HogarCat}
+  ${SaludCat}
+  ${ArriendoCat}
+  ${FacturasMensualidadesCat}
+  ${AlimentacionCat}
+  ${TransporteCat}
+  ${EntretenimientoCat}
+  ${RopaCat}
+  ${VariosCat}
+Total: ${outcomes}`); */
+
+const BarchartOne = document.getElementById('BarchartOne');
+
+BarchartOne.innerHTML = `
+<tr class="hogar1">
+  <th scope="row"><i class="bi bi-house-fill"></i></th>
+  <td>Hogar</td>
+  <td>$${HogarCat}</td>
+</tr>
+<tr class="salud1">
+  <th scope="row"><i class="bi bi-bandaid-fill"></i></th>
+  <td>Salud</td>
+  <td>$${SaludCat}</td>
+</tr>
+<tr class="arriendo1">
+  <th scope="row"><i class="bi bi-building-exclamation"></i></th>
+  <td>Arriendo</td>
+  <td>$${ArriendoCat}</td>
+</tr>
+<tr class="facturas1">
+  <th scope="row"><i class="bi bi-receipt"></i></th>
+  <td>Facturas y mensualidades</td>
+  <td>$${FacturasMensualidadesCat}</td>
+</tr>
+<tr class="alimentacion1">
+  <th scope="row"><i class="bi bi-basket2-fill"></i></th>
+  <td>Alimentación</td>
+  <td>$${AlimentacionCat}</td>
+</tr>
+<tr class="transporte1">
+  <th scope="row"><i class="bi bi-car-front-fill"></i></th>
+  <td>Transporte</td>
+  <td>$${TransporteCat}</td>
+</tr>
+<tr class="entretenimiento1">
+  <th scope="row"><i class="bi bi-emoji-smile-fill"></i></th>
+  <td>Entretenimiento</td>
+  <td>$${EntretenimientoCat}</td>
+</tr>
+<tr class="ropa1">
+  <th scope="row"><img src="../../public/imgs/shirt.svg" alt="shirt"></th>
+  <td>Ropa</td>
+  <td>$${RopaCat}</td>
+</tr>
+<tr class="varios1">
+  <th scope="row"><i class="bi bi-box-seam-fill"></i></th>
+  <td>Varios</td>
+  <td>$${VariosCat}</td>
+</tr>
+<tr class="total1">
+  <td colspan="2">TOTAL</td>
+  <td>$${outcomes}</td>
+</tr>
+
+`;
+
+
+/* const incomes = arrayTwo[1]; */

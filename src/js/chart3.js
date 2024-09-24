@@ -1,6 +1,7 @@
 import Chart from 'chart.js/auto';
 import { GenerateInfo, utility } from './Diagrams/IncomOutcomeDgr';
 
+const id = 1;
 const ctx = document.getElementById('chart3');
 
 const red = '#EE5454';
@@ -14,7 +15,7 @@ const cyan = '#5FDEEF';
 const purple = '#BB76F1';
 
 const categories = ['Gastos', 'Ingresos'];
-const dataNumber = await GenerateInfo(1)
+const dataNumber = await GenerateInfo(id)
 const options = {
   responsive: true,
   plugins: {
@@ -71,9 +72,9 @@ new Chart(ctx, {
   options: options
 });
 
-// Dropdown table content
+//----------------------------------------------------------------
 
-const id = 1;
+// Dropdown table content
 
 const array = await GenerateInfo(id); 
 const outcomes = array[0];
