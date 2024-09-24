@@ -199,3 +199,12 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
     };
     createMovement(movementData);
 });
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if (verification == "true") {
+        window.location.href = "../views/dashboard.html"
+    }
+    else{
+        window.location.href = "../views/login.html"
+    }
+}
