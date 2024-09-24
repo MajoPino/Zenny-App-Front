@@ -1,3 +1,5 @@
+
+
 // Function to update the current date
 function dateUpdate() {
     const today = new Date();
@@ -227,3 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
         enableGraphicsButton();
     }
 });
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if (verification == "true") {
+        window.location.href = "../views/dashboard.html"
+    }
+    else{
+        window.location.href = "../views/login.html"
+    }
+}
