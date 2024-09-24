@@ -72,17 +72,17 @@
                 <h3>Seleccione uno de los siguientes métodos de pago</h3>
                 <div class="paymentMethods">
                     <button class="btn btn-link">
-                        <img src="../../public/imgs/Maestro.webp" alt="maestro">
-                    </button class="btn btn-link">
-                    <button class="btn btn-link">
-                        <img src="../../public/imgs/Nequi.webp" alt="nequi">
-                    </button class="btn btn-link">
-                    <button class="btn btn-link">
-                        <img src="../../public/imgs/Visa.webp" alt="visa">
-                    </button class="btn btn-link">
-                    <button class="btn btn-link">
-                        <img src="../../public/imgs/Mastercard.webp" alt="mastercard">
-                    </button class="btn btn-link">
+                        <img src="../../public/imgs/Maestro.webp" id = "maestro" class="image" alt="maestro">
+                    </button>
+                    <button class="btn btn-link" id = "nequi">
+                        <img src="../../public/imgs/Nequi.webp" class="image" alt="nequi">
+                    </button>
+                    <button class="btn btn-link" id = "visa">
+                        <img src="../../public/imgs/Visa.webp" class="image" alt="visa">
+                    </button>
+                    <button class="btn btn-link" id = "mastercard">
+                        <img src="../../public/imgs/Mastercard.webp" class="image" alt="mastercard">
+                    </button>
                 </div>
                 <button class="btn btn-secondary rounded rounded-5">Pagar</button>
             </div>
@@ -100,6 +100,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/payment.js"></script>
 </body>
 
 </html>
