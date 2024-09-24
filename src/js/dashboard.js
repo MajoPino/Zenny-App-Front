@@ -1,3 +1,14 @@
+import { dashboard } from './dashboard.js'; // Adjust the import path if needed
+
+// Initialize the dashboard
+const dashboardInstance = dashboard();
+
+// Call the getCategory function
+dashboardInstance.getCategory().then((content) => {
+  console.log('Category content:', content); // Logs the returned content
+});
+
+
 // Function to update the current date
 function dateUpdate() {
     const today = new Date();

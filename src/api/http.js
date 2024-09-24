@@ -1,13 +1,14 @@
-import Axios, { Axios } from 'axios';
+import Axios from 'axios';
 
 export const BASE_URL = "https://zenny.azurewebsites.net/api/";
 
 export function httpService() {
-  
-  Axios.create({
+  // Create an Axios instance
+  const http = Axios.create({
     baseURL: BASE_URL,
   });
 
+  // GET request method
   const httpGet = async (url) => {
     try {
       const response = await http.get(url);
@@ -18,6 +19,7 @@ export function httpService() {
     }
   };
 
+  // POST request method
   const httpPost = async (url, data) => {
     try {
       const response = await http.post(url, data);
@@ -28,6 +30,7 @@ export function httpService() {
     }
   };
 
+  // PUT request method
   const httpPut = async (url, data) => {
     try {
       const response = await http.put(url, data);
@@ -38,6 +41,7 @@ export function httpService() {
     }
   };
 
+  // PATCH request method
   const httpPatch = async (url, data) => {
     try {
       const response = await http.patch(url, data);
@@ -48,6 +52,7 @@ export function httpService() {
     }
   };
 
+  // DELETE request method
   const httpDelete = async (url, data) => {
     try {
       const response = await http.delete(url, { data });
@@ -58,10 +63,12 @@ export function httpService() {
     }
   };
 
+  // Return the service methods
   return {
     httpGet,
     httpPost,
     httpPut,
+    httpPatch,
     httpDelete,
   };
 }
