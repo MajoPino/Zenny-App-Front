@@ -97,6 +97,9 @@ footer {
 .chart-box-1{
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #chart1{
@@ -177,6 +180,54 @@ thead{
   padding-inline: 4px;
   width: 350px;
   border-bottom: var(--dark-grey) solid 2px;
+}
+
+.transporte1{
+  background-color: var(--pink);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
+}
+
+.entretenimiento1{
+  background-color: var(--red-error);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
+}
+
+.ropa1{
+  background-color: var(--orange);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
+}
+
+.varios1{
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
+  border-bottom: var(--dark-grey) solid 2px;
+}
+
+.total1{
+  color: var(--mint-green);
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4px;
+  width: 350px;
 }
 
 .btn-secondary {
