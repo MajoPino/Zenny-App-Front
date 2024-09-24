@@ -90,6 +90,7 @@ function sendData(data) {
     localStorage.setItem("access", true)
     localStorage.setItem("email", data.email)
     localStorage.setItem("token", data.token)
+    localStorage.setItem("plan", data.subscription_type)
     localStorage.setItem("id", data.id)
     window.location.href = "../views/dashboard.html"
 }
