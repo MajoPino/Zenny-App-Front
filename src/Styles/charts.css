@@ -134,6 +134,7 @@ footer {
   border: var(--light-green) 2px solid;
   background-color: var(--dark-grey);
   width: 400px;
+  margin-bottom: 40px;
 }
 
 tbody{
