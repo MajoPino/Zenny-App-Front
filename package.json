@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@sweetalert2/theme-dark": "^5.0.18",
     "vite": "^5.4.1"
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "chart.js": "^4.4.4"
+    "chart.js": "^4.4.4",
+    "sweetalert2": "^11.6.13"
   }
 }

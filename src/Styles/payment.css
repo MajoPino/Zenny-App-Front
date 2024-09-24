@@ -98,6 +98,10 @@ footer {
   height: 35px;
 }
 
+.active-border {
+  border: 4px solid var(--light-green); /* Cambia el grosor y color según sea necesario */
+}
+
 .textPremium {
   display: flex;
   flex-direction: column;
@@ -153,7 +157,7 @@ footer {
 
 .btn-link img{
   width: 165px;
-  border: #32a873 3px solid;
+  /* border: #32a873 3px solid; */
   border-radius: 10px;
   margin-bottom: 5px;
 }
@@ -294,7 +298,7 @@ footer {
 
 .btn-link img{
   width: 165px;
-  border: #32a873 3px solid;
+  /* border: #32a873 3px solid; */
   border-radius: 10px;
   margin-bottom: 5px;
 }
@@ -435,8 +439,8 @@ footer {
   
   .btn-link img{
     width: 165px;
-    border: #32a873 3px solid;
-    border-radius: 10px;
+    /* border: #32a873 3px solid;
+    border-radius: 10px; */
   }
 
   .vectors{

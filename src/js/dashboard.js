@@ -1,12 +1,3 @@
-import { dashboard } from './dashboard.js'; // Adjust the import path if needed
-
-// Initialize the dashboard
-const dashboardInstance = dashboard();
-
-// Call the getCategory function
-dashboardInstance.getCategory().then((content) => {
-  console.log('Category content:', content); // Logs the returned content
-});
 
 
 // Function to update the current date
@@ -238,3 +229,12 @@ document.addEventListener('DOMContentLoaded', () => {
         enableGraphicsButton();
     }
 });
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if (verification == "true") {
+        window.location.href = "../views/dashboard.html"
+    }
+    else{
+        window.location.href = "../views/login.html"
+    }
+}

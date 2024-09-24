@@ -120,7 +120,9 @@ body {
     box-shadow: 0 0 10px var(--dark-pine), 0 0 20px var(--dark-pine), 0 0 30px var(--dark-pine);
     animation-fill-mode: forwards;
 }
-
+#benefit-5{
+    font-size: 150%;
+}
 
 /* Desktop Styles */
 @media (min-width: 768px) {
@@ -207,7 +209,7 @@ input.is-invalid::placeholder {
         font-size: 120%;
     }
 
-    #benefit-4 {
+    #benefit-5 {
         font-size: 150%;
     }
 
@@ -343,6 +345,9 @@ input.is-invalid::placeholder {
         }
 
         #benefit-4 {
+            font-size: 220%;
+        }
+        #benefit-5 {
             font-size: 220%;
         }
 
