@@ -92,6 +92,16 @@ const VariosCat = array[8];
 const arrayTwo = await GenerateInfo(id);
 const outcomes = arrayTwo[0];
 
+const HogarPer = Math.round((HogarCat / outcomes) * 100);
+const SaludPer = Math.round((SaludCat / outcomes) * 100);
+const ArriendoPer = Math.round((ArriendoCat / outcomes) * 100);
+const FacturasMensualidadesPer = Math.round((FacturasMensualidadesCat / outcomes) * 100);
+const AlimentacionPer = Math.round((AlimentacionCat / outcomes) * 100);
+const TransportePer = Math.round((TransporteCat / outcomes) * 100);
+const EntretenimientoPer = Math.round((EntretenimientoCat / outcomes) * 100);
+const RopaPer = Math.round((RopaCat / outcomes) * 100);
+const VariosPer = Math.round((VariosCat / outcomes) * 100);
+
 console.log(`
   ${HogarCat}
   ${SaludCat}
@@ -111,55 +121,55 @@ PieSpents.innerHTML = `
   <th scope="row"><i class="bi bi-house-fill"></i></th>
   <td>Hogar</td>
   <td>$${HogarCat}</td>
-  <td>10%</td>
+  <td>${HogarPer}%</td>
 </tr>
 <tr class="salud1">
   <th scope="row"><i class="bi bi-bandaid-fill"></i></th>
   <td>Salud</td>
   <td>$${SaludCat}</td>
-  <td>10%</td>
+  <td>${SaludPer}%</td>
 </tr>
 <tr class="arriendo1">
   <th scope="row"><i class="bi bi-building-exclamation"></i></th>
   <td>Arriendo</td>
   <td>$${ArriendoCat}</td>
-  <td>10%</td>
+  <td>${AlimentacionPer}%</td>
 </tr>
 <tr class="facturas1">
   <th scope="row"><i class="bi bi-receipt"></i></th>
   <td>Facturas y mensualidades</td>
   <td>$${FacturasMensualidadesCat}</td>
-  <td>10%</td>
+  <td>${FacturasMensualidadesPer}%</td>
 </tr>
 <tr class="alimentacion1">
   <th scope="row"><i class="bi bi-basket2-fill"></i></th>
   <td>Alimentación</td>
   <td>$${AlimentacionCat}</td>
-  <td>10%</td>
+  <td>${AlimentacionPer}%</td>
 </tr>
 <tr class="transporte1">
   <th scope="row"><i class="bi bi-car-front-fill"></i></th>
   <td>Transporte</td>
   <td>$${TransporteCat}</td>
-  <td>10%</td>
+  <td>${TransportePer}%</td>
 </tr>
 <tr class="entretenimiento1">
   <th scope="row"><i class="bi bi-emoji-smile-fill"></i></th>
   <td>Entretenimiento</td>
   <td>$${EntretenimientoCat}</td>
-  <td>10%</td>
+  <td>${EntretenimientoPer}%</td>
 </tr>
 <tr class="ropa1">
   <th scope="row"><img src="../../public/imgs/shirt.svg" alt="shirt"></th>
   <td>Ropa</td>
   <td>$${RopaCat}</td>
-  <td>10%</td>
+  <td>${RopaPer}%</td>
 </tr>
 <tr class="varios1">
   <th scope="row"><i class="bi bi-box-seam-fill"></i></th>
   <td>Varios</td>
   <td>$${VariosCat}</td>
-  <td>10%</td>
+  <td>${VariosPer}%</td>
 </tr>
 <tr class="total1">
   <td colspan="2">TOTAL</td>
