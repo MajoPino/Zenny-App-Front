@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 
-const ctx = document.getElementById('chart1');
+const ctx = document.getElementById('chart2');
 
 const red = '#EE5454';
 const green = '#65D8A4';
@@ -52,7 +52,7 @@ const options = {
 };
 
  new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
       labels: categories,
       datasets: [{
