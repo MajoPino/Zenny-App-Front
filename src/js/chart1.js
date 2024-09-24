@@ -56,7 +56,7 @@ const options = {
     data: {
       labels: categories,
       datasets: [{
-        label: 'Spent per category',
+        label: 'Total',
         data: dataNumber,
         borderWidth: 1,
         backgroundColor: [
