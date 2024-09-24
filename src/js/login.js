@@ -61,16 +61,17 @@ async function verification(email,password) {
 
         const data = await response.json();
         console.log('Login successful:', data);
-        guardian()
+        guardian(data)
     } catch (error) {
         console.error('Error logging in:', error);
     }
 
 }
 
-function guardian() {
+function guardian(data) {
     localStorage.setItem("access", true)
-    localStorage.setItem("email",email.value)
+    localStorage.setItem("email",data.email)
     localStorage.setItem("token",data.token)
-    window.location.href = "./dashboard.html"
+    localStorage.setItem("id",data.Id)
+    window.location.href = "../views/dashboard.html"
 }
