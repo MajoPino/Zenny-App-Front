@@ -1,5 +1,68 @@
 import Chart from 'chart.js/auto';
 
+const DateToday = new Date();
+const dayToday = DateToday.getDate();
+const monthToday = DateToday.getMonth();
+
+var exactMonth;
+
+switch (monthToday) {
+  case 0:
+    exactMonth = 'Enero';
+    break;
+
+  case 1:
+    exactMonth = 'Febrero';
+    break;
+
+  case 2:
+    exactMonth = 'Marzo';
+    break;
+
+  case 3:
+    exactMonth = 'Abril';
+    break;
+
+  case 4:
+    exactMonth = 'Mayo';
+    break;
+
+  case 5:
+    exactMonth = 'Junio';
+    break;
+
+  case 6:
+    exactMonth = 'Julio';
+    break;
+
+  case 7:
+    exactMonth = 'Agosto';
+    break;
+
+  case 8:
+    exactMonth = 'Septiembre';
+    break;
+
+  case 9:
+    exactMonth = 'Octubre';
+    break;
+
+  case 10:
+    exactMonth = 'Noviembre';
+    break;
+
+  case 11:
+    exactMonth = 'Diciembre';
+    break;
+
+}
+
+console.log(exactMonth + ' ' + dayToday)
+
+const dateMonth = document.getElementById('dateMonth');
+
+dateMonth.innerHTML = `<h2 class="mb-1 dateMonth">${exactMonth} ${dayToday}</h2>`;
+
 const ctx = document.getElementById('chart1');
 
 const red = '#EE5454';
@@ -15,7 +78,7 @@ const purple = '#BB76F1';
 const categories = ['Hogar', 'Salud', 'Arriendo', 'Facturas y mensualidades', 'Alimentación', 'Transporte', 'Entretenimiento', 'Ropa', 'Varios'];
 const dataNumber = [10000, 30000, 70000, 90000, 50000, 90000, 40000, 50000, 10000]
 const options = {
-  responsive: true,
+  responsive: false,
   plugins: {
     legend: {
       display: false,

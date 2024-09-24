@@ -70,3 +70,5 @@ const options = {
     },
     options: options
   });
+
+  const PieSpents = document.getElementById('PieSpents');

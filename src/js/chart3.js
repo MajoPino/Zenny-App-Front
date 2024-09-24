@@ -78,15 +78,10 @@ const id = 1;
 const array = await GenerateInfo(id); 
 const outcomes = array[0];
 const incomes = array[1];
-  
-console.log(outcomes);
-console.log(incomes);
 
 const utilityR = await utility(array);
-console.log(utility);
 
 const IncomeOutcome = document.getElementById('IncomeOutcome')
-console.log(IncomeOutcome);
 
 IncomeOutcome.innerHTML = `
 <tr class="gastos1">
