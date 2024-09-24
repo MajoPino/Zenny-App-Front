@@ -1,4 +1,5 @@
 import Chart from 'chart.js/auto';
+import { GenerateArray } from './Diagrams/byCategoryDiagrmas';
 
 const DateToday = new Date();
 const dayToday = DateToday.getDate();
@@ -76,7 +77,7 @@ const cyan = '#5FDEEF';
 const purple = '#BB76F1';
 
 const categories = ['Hogar', 'Salud', 'Arriendo', 'Facturas y mensualidades', 'Alimentación', 'Transporte', 'Entretenimiento', 'Ropa', 'Varios'];
-const dataNumber = [10000, 30000, 70000, 90000, 50000, 90000, 40000, 50000, 10000]
+const dataNumber = await GenerateArray(1)
 const options = {
   responsive: false,
   plugins: {
