@@ -72,22 +72,15 @@ form[0].addEventListener('submit', function (e) {
         passwordsEquals = true;
     }
 
-    if( nameVerification === true &&
+    if (nameVerification === true &&
         lastNameVerification === true &&
         emailVerification === true &&
         passwordVerification === true &&
         password2Verification === true &&
-        passwordsEquals === true)
-        {
+        passwordsEquals === true) {
 
-verifyUserExistence(name,lastName,email,password)
-        }            
-            console.log(nameVerification)
-            console.log(lastNameVerification)
-            console.log(emailVerification)
-            console.log(passwordVerification)
-            console.log(password2Verification)
-            console.log(passwordsEquals)
+        verifyUserExistence(name, lastName, email, password)
+    }
 });
 
 function guardian() {
@@ -97,61 +90,21 @@ function guardian() {
     }
 }
 
-async function verifyUserExistence(name, lastName, email, password) {
+function verifyUserExistence(name, lastName, email, password) {
 
-    try {
-
-        let newUser = {
-            "Name": name.value,
-            "LastName": lastName.value,
-            "Email": email.value,
-            "Password": password.value,
-            "SubscriptionTypesId": 1
-        }
-
-        let response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newUser)
-        })
-
-        if (response.ok) {            
-            localStorage.setItem("email",email.value )
-            localStorage.setItem("access","true")
-            Swal.fire({
-                icon: 'success',
-                title: '¡Buen trabajo!',
-                text: 'Usuario registrado correctamente',
-                showConfirmButton: false,
-                timer: 3000
-            }).then(()=>{
-                window.location.href = "../views/dashboard.html"
-            })
-
-
-        }
-        else if(response.status == 400)
-            {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'El email ya esta en uso',
-                    text: 'Por favor ingresa',
-                });
-                email.value = "";
-            }
-
-        else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops... ¡Algo salio mal!',
-                text: 'Intentalo de nuevo',
-            });
-        }
-
-    } catch (error) {
-        console.error
-    }
+    localStorage.setItem("email", email.value)
+    localStorage.setItem("name",name.value)
+    localStorage.setItem("lastName",lastName.value)
+    localStorage.setItem("password",password.value)
+    localStorage.setItem("access", "true")
+    Swal.fire({
+        icon: 'success',
+        title: '¡Buen trabajo!',
+        text: 'Usuario registrado correctamente',
+        showConfirmButton: false,
+        timer: 3000
+    }).then(() => {
+        window.location.href = "../views/userPlan.html"
+    })
 
 }
