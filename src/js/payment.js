@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('.image');
 let pay = document.getElementById("pay-button");
 
-let url = "https://zenny.azurewebsites.net/api/v1/User/Register"
+let url = "https://zenny.azurewebsites.net/api/v2/User/Register"
 
 
 guardian()

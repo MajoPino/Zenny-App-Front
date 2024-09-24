@@ -1,6 +1,6 @@
 let boxPremium = document.getElementById("box-premium");
 let boxBasic = document.getElementById("box-basic");
-let url = "https://zenny.azurewebsites.net/api/v1/User/Register"
+let url = "https://zenny.azurewebsites.net/api/v2/User/Register"
 
 guardian()
 boxBasic.addEventListener("click",async function (e) {
