@@ -5,7 +5,7 @@ let url = "https://zenny.azurewebsites.net/api/v1/User/Register"
 guardian()
 boxBasic.addEventListener("click",async function (e) {
     e.preventDefault();
-    localStorage.setItem("done","true")
+    localStorage.setItem("access","1")
     let user = {
         "id":0,
         "Name": localStorage.getItem("name"),
@@ -23,22 +23,24 @@ boxBasic.addEventListener("click",async function (e) {
     });
     localStorage.removeItem("name")
     localStorage.removeItem("lastName")
+    localStorage.removeItem("email")
     localStorage.removeItem("password")
-    window.location.href = "../views/dashboard.html"
+    window.location.href = "../views/Login.html"
 })
 
 
 boxPremium.addEventListener("click",function (e) {
     e.preventDefault();
-
-    localStorage.setItem("plan","premium")
-    localStorage.setItem("done","true")
+    
+    localStorage.setItem("access","2")
     window.location.href = "../views/payment.html"
 })
 
 function guardian() {
-    let verification = localStorage.getItem("done")
-    if (verification == "true") {
-        window.location.href = "../views/dashboard.html"
+    let verification = localStorage.getItem("access")
+
+    if(verification !== "0")
+    {
+        window.location.href = "../../index.html"
     }
 }

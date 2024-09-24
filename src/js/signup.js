@@ -17,8 +17,6 @@ let passwordVerification = false;
 let password2Verification = false;
 let passwordsEquals = false;
 
-let url = "https://zenny.azurewebsites.net/api/v1/User/Register"
-
 guardian();
 form[0].addEventListener('submit', function (e) {
     e.preventDefault();
@@ -85,9 +83,11 @@ form[0].addEventListener('submit', function (e) {
 
 function guardian() {
     let verification = localStorage.getItem("access")
-    if (verification == "true") {
-        window.location.href = "../views/dashboard.html"
+    if(verification === "0")
+    {
+        window.location.href = "../views/userPlan"
     }
+
 }
 
 function verifyUserExistence(name, lastName, email, password) {
@@ -96,7 +96,7 @@ function verifyUserExistence(name, lastName, email, password) {
     localStorage.setItem("name",name.value)
     localStorage.setItem("lastName",lastName.value)
     localStorage.setItem("password",password.value)
-    localStorage.setItem("access", "true")
+    localStorage.setItem("access", "0")
     Swal.fire({
         icon: 'success',
         title: '¡Buen trabajo!',

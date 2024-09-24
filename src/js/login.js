@@ -22,22 +22,22 @@ form[0].addEventListener("submit", async (event) => {
         password.classList.remove("is-invalid")
     }
 
-    await verification(email.value,password.value);
+    await verification(email,password);
 })
 
 async function verification(email,password) {
 
     try {
-
+        let user = {
+            "email":email.value,
+            "password":password.value
+        }
         let response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type':'application/json',
             },
-            body: new URLSearchParams({
-                email: email,
-                password: password
-            }),
+            body: JSON.stringify(user),
         });        
 
         if (!response.ok) {

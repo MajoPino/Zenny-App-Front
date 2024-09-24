@@ -227,3 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
         enableGraphicsButton();
     }
 });
+function guardian() {
+    let verification = localStorage.getItem("loginToken")
+    if (verification == "true") {
+        window.location.href = "../views/dashboard.html"
+    }
+    else{
+        window.location.href = "../views/login.html"
+    }
+}
