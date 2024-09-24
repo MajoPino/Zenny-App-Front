@@ -28,7 +28,7 @@ function populateExpenseCategories(categories) {
 // Fetch incomes from API
 async function fetchIncomes(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getIncomes/${userId}`);
+        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getIncomes/${userId}`);
         if (response.ok) {
             const incomes = await response.json();
             renderMovements(incomes, 'ingreso');
@@ -43,7 +43,7 @@ async function fetchIncomes(userId) {
 // Fetch expenses from API
 async function fetchExpenses(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getExpenses/${userId}`);
+        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getExpenses/${userId}`);
         if (response.ok) {
             const expenses = await response.json();
             renderMovements(expenses, 'gasto');
@@ -58,7 +58,7 @@ async function fetchExpenses(userId) {
 // Fetch total incomes from API
 async function fetchTotalIncomes(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getTotalIncomes/${userId}`);
+        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getTotalIncomes/${userId}`);
         if (response.ok) {
             const totalIncomes = await response.json();
             document.getElementById('total-incomes').innerText = `$${totalIncomes.toLocaleString('es-CO')}`;
@@ -73,7 +73,7 @@ async function fetchTotalIncomes(userId) {
 // Fetch total expenses from API
 async function fetchTotalExpenses(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getTotalExpenses/${userId}`);
+        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getTotalExpenses/${userId}`);
         if (response.ok) {
             const totalExpenses = await response.json();
             document.getElementById('total-expenses').innerText = `$${totalExpenses.toLocaleString('es-CO')}`;
@@ -180,7 +180,7 @@ async function deleteMovement(id) {
 
 // Initialize dashboard on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = 123;  // Replace with actual user ID
+    const userId = 1;  // Replace with actual user ID
     fetchCategories();
     fetchIncomes(userId);
     fetchExpenses(userId);
@@ -195,7 +195,7 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
         concept: document.getElementById('expense-category').value,
         value: parseFloat(document.getElementById('expense-value').value),
         date: document.getElementById('expense-date').value,
-        userId: 123  // Replace with actual user ID
+        userId: 1  // Replace with actual user ID
     };
     createMovement(movementData);
 });
