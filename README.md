@@ -24,6 +24,9 @@ Our main goal as an app is that any kind of person could be able to manage their
 ### Why do we exist?
 Most of the time when people try to have an order to their finances or get their personal  budgets done, they often find themselves in tedious spreadsheets and spending their time doing codes and learning how these systems work. With Zenny we offer a solution, a web application that will allow you to register all of your incomes and outcomes data and have a traceability of when and how do you spend your money, allowing you to have a start point to have better financial habits.
 
+##Design
+[Figma](https://www.figma.com/design/4Zc7zPhRBB6RVfavvQIwyM/Zenny-App?node-id=0-1&t=OU6WdSt1phzAZJoe-1)
+
 ## Packages & Libraries
 
 We used this Package:
