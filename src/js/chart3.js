@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto';
 import { GenerateInfo, utility } from './Diagrams/IncomOutcomeDgr';
 
-const id = 1;
+const id = localStorage.getItem('id');
 const ctx = document.getElementById('chart3');
 
 const red = '#EE5454';

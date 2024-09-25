@@ -2,7 +2,7 @@ import Chart from 'chart.js/auto';
 import { GenerateArray } from './Diagrams/byCategoryDiagrmas';
 import { GenerateInfo } from './Diagrams/IncomOutcomeDgr';
 
-const id = 1;
+const id = localStorage.getItem('id');
 
 const DateToday = new Date();
 const dayToday = DateToday.getDate();
@@ -155,18 +155,6 @@ const VariosCat = array[8];
 
 const arrayTwo = await GenerateInfo(id);
 const outcomes = arrayTwo[0];
-
-/* console.log(`
-  ${HogarCat}
-  ${SaludCat}
-  ${ArriendoCat}
-  ${FacturasMensualidadesCat}
-  ${AlimentacionCat}
-  ${TransporteCat}
-  ${EntretenimientoCat}
-  ${RopaCat}
-  ${VariosCat}
-Total: ${outcomes}`); */
 
 const BarchartOne = document.getElementById('BarchartOne');
 
