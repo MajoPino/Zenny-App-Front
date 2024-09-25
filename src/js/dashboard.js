@@ -1,4 +1,4 @@
-import {utility,GenerateInfo} from './Diagrams/IncomOutcomeDgr'
+import {utility,GenerateInfo} from './Diagrams/IncomOutcomeDgr.js'
 
 // Base URL del API
 const baseURL = "https://zenny.azurewebsites.net/api/v2";
@@ -218,4 +218,10 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
         userId: 2  // Replace with actual user ID
     };
     createMovement(movementData);
+});
+
+//delete localstorage
+document.getElementById('logout').addEventListener('click', () => {  
+    localStorage.clear();
+    window.location.href = "../../index.html"
 });
