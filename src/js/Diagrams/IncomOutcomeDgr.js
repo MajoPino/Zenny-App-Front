@@ -1,5 +1,4 @@
-import { GetData } from "./GetData"
-
+import { GetData } from "./GetData.js"
 
 
 export async function utility(array) {
@@ -7,8 +6,8 @@ export async function utility(array) {
 }
 export async function GenerateInfo(id) {
     let array= []
-    let totalIncomesendporint= `/api/v1/movement/getTotalIncomes/${id}`
-    let totalOutcomesendpoint=`/api/v1/movement/getTotalExpenses/${id}`
+    let totalIncomesendporint= `/api/v2/movement/getTotalIncomes/${id}`
+    let totalOutcomesendpoint=`/api/v2/movement/getTotalExpenses/${id}`
 
     array.push(await GetData(totalOutcomesendpoint)) 
     array.push(await GetData(totalIncomesendporint)) 
