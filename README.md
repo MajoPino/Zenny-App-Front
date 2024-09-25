@@ -13,18 +13,18 @@ Our main goal as an app is that any kind of person could be able to manage their
 
 ## Authors
 
--   <img src="https://avatars.githubusercontent.com/u/137262730?v=4" width="30px" height="30px" alt="Avatar"> [@luisaferRP](https://www.github.com/luisaferRP)
--   <img src="https://avatars.githubusercontent.com/u/109235605?v=4" width="30px" height="30px" alt="Avatar"> [@jtorova5](https://www.github.com/jtorova5)
--   <img src="https://avatars.githubusercontent.com/u/75854211?v=4" width="30px" height="30px" alt="Avatar">  [@SanDaws](https://www.github.com/sanDaws)
--   <img src="https://avatars.githubusercontent.com/u/138082726?v=4" width="30px" height="30px" alt="Avatar">  [@MajoPino](https://www.github.com/MajoPino)
--   <img src="https://avatars.githubusercontent.com/u/71363955?v=4" width="30px" height="30px" alt="Avatar">   [@dfelipesr46](https://www.github.com/dfelipesr46)
--   <img src="https://avatars.githubusercontent.com/u/160916037?v=4" width="30px" height="30px" alt="Avatar">  [@The-G-Man-Half-Life](https://www.github.com/The-G-Man-Half-Life)
+-   <img src="https://avatars.githubusercontent.com/u/137262730?v=4" width="30px" height="30px" alt="Avatar">    [@luisaferRP](https://www.github.com/luisaferRP)
+-   <img src="https://avatars.githubusercontent.com/u/109235605?v=4" width="30px" height="30px" alt="Avatar">    [@jtorova5](https://www.github.com/jtorova5)
+-   <img src="https://avatars.githubusercontent.com/u/75854211?v=4" width="30px" height="30px" alt="Avatar">     [@SanDaws](https://www.github.com/sanDaws)
+-   <img src="https://avatars.githubusercontent.com/u/138082726?v=4" width="30px" height="30px" alt="Avatar">     [@MajoPino](https://www.github.com/MajoPino)
+-   <img src="https://avatars.githubusercontent.com/u/71363955?v=4" width="30px" height="30px" alt="Avatar">      [@dfelipesr46](https://www.github.com/dfelipesr46)
+-   <img src="https://avatars.githubusercontent.com/u/160916037?v=4" width="30px" height="30px" alt="Avatar">     [@The-G-Man-Half-Life](https://www.github.com/The-G-Man-Half-Life)
 ## Zenny as the project
 ### Why do we exist?
 Most of the time when people try to have an order to their finances or get their personal  budgets done, they often find themselves in tedious spreadsheets and spending their time doing codes and learning how these systems work. With Zenny we offer a solution, a web application that will allow you to register all of your incomes and outcomes data and have a traceability of when and how do you spend your money, allowing you to have a start point to have better financial habits.
 
 ## Design
-[Figma](https://www.figma.com/design/4Zc7zPhRBB6RVfavvQIwyM/Zenny-App?node-id=0-1&t=OU6WdSt1phzAZJoe-1)
+<img src="https://th.bing.com/th/id/R.278148a344a16ac0af0f981deb2a31b7?rik=p3RloBOM7dvvvw&pid=ImgRaw&r=0" width="30px" height="30px" alt="figma">    [Figma](https://www.figma.com/design/4Zc7zPhRBB6RVfavvQIwyM/Zenny-App?node-id=0-1&t=OU6WdSt1phzAZJoe-1)
 
 ## Packages & Libraries
 
