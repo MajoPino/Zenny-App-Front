@@ -1,7 +1,3 @@
-// import Swal from '/node_modules/sweetalert2/dist/sweetalert2.all.js';
-import Swal from "sweetalert2";
-import '@sweetalert2/theme-dark/dark.css'
-// import 'sweetalert2/src/scss'
 
 let form = document.getElementsByTagName('form');
 let name = document.getElementById('name');
@@ -17,7 +13,6 @@ let passwordVerification = false;
 let password2Verification = false;
 let passwordsEquals = false;
 
-guardian();
 form[0].addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -30,8 +25,8 @@ form[0].addEventListener('submit', function (e) {
     }
 
     if (lastName.value === '') {
-        lastName.classList.add('is-invalid');
-        lastNameVerification = false;
+        lastName.classList.remove('is-invalid');
+        lastNameVerification = true;
     } else {
         lastName.classList.remove('is-invalid');
         lastNameVerification = true;
@@ -81,17 +76,8 @@ form[0].addEventListener('submit', function (e) {
     }
 });
 
-function guardian() {
-    let verification = localStorage.getItem("access")
-    if(verification === "0")
-    {
-        window.location.href = "../views/userPlan"
-    }
-
-}
 
 function verifyUserExistence(name, lastName, email, password) {
-
     localStorage.setItem("email", email.value)
     localStorage.setItem("name",name.value)
     localStorage.setItem("lastName",lastName.value)
