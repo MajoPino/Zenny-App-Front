@@ -83,6 +83,10 @@ form[0].addEventListener('submit', function (e) {
 
 function guardian() {
     let verification = localStorage.getItem("access")
+    if(verification ==="true")
+    {
+        window.location.href = "../views/dashboard.html"
+    }
     if(verification === "0")
     {
         window.location.href = "../views/userPlan"

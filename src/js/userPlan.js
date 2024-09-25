@@ -31,14 +31,16 @@ boxBasic.addEventListener("click",async function (e) {
 
 boxPremium.addEventListener("click",function (e) {
     e.preventDefault();
-    
-    localStorage.setItem("access","2")
     window.location.href = "../views/payment.html"
 })
 
 function guardian() {
     let verification = localStorage.getItem("access")
 
+    if(verification ==="true")
+    {
+        window.location.href = "../views/dashboard.html"
+    }
     if(verification !== "0")
     {
         window.location.href = "../../index.html"

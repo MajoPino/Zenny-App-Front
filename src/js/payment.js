@@ -34,10 +34,15 @@ pay.addEventListener("click",async function(){
 function guardian() {
     let verification = localStorage.getItem("access")
 
+    if(verification ==="true")
+    {
+        window.location.href = "../views/dashboard.html"
+    }
     if(verification !== "0")
     {
         window.location.href = "../../index.html"
     }
+    
 }
 // Agrega el evento de clic a cada botón
 buttons.forEach(button => {

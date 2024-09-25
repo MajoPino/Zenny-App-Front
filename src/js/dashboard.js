@@ -1,8 +1,15 @@
+
+guardian()
+
+let id = localStorage.getItem("id")
+
 // Fetch categories from API
 async function fetchCategories() {
     try {
-        const response = await fetch('https://zenny.azurewebsites.net/api/Category');
-        if (response.ok) {
+        const response = await fetch(`https://zenny.azurewebsites.net/api/v1/Category`);
+        console.log(response.json())
+        if (response.status === 200) {
+            console.log(response.status)
             const categories = await response.json();
             populateExpenseCategories(categories);
         } else {
@@ -20,13 +27,14 @@ function populateExpenseCategories(categories) {
     categories.forEach(category => {
         const option = document.createElement('option');
         option.value = category.id;
-        option.text = category.name;
+        option.text = category.category1;
         categorySelect.appendChild(option);
     });
 }
 
 // Fetch incomes from API
 async function fetchIncomes(userId) {
+    console.log(userId)
     try {
         const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getIncomes/${userId}`);
         if (response.ok) {
@@ -42,6 +50,7 @@ async function fetchIncomes(userId) {
 
 // Fetch expenses from API
 async function fetchExpenses(userId) {
+    console.log(userId)
     try {
         const response = await fetch(`https://zenny.azurewebsites.net/api/v1/movement/getExpenses/${userId}`);
         if (response.ok) {
@@ -109,18 +118,27 @@ async function createMovement(movementData) {
 
 // Render movements in the table (both incomes and expenses)
 function renderMovements(movements, type) {
-    const table = document.getElementById(type === 'ingreso' ? 'income-table' : 'expense-table');
+    const table = document.getElementById("table-movements");
     table.innerHTML = '';  // Clear the current table content
     movements.forEach(movement => {
+        let date = new Date(movement.movementDate)
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${movement.date}</td>
-            <td>${movement.concept}</td>
-            <td>$${movement.value.toLocaleString('es-CO')}</td>
-            <td>
-                <button class="btn-edit" onclick="editMovement(${movement.id})">Edit</button>
-                <button class="btn-delete" onclick="deleteMovement(${movement.id})">Delete</button>
-            </td>`;
+        <span class = "d-flex justify-content-between">
+                <span class = "w-50 d-flex justify-content-between">
+                    <span >${movement.concept}</span>
+                    <span class = "me-5">${date.toLocaleDateString('es-ES')}</span>
+                </span>
+
+                <span class = "w-50 d-flex justify-content-between">        
+                    <span>$${movement.value.toLocaleString('es-CO')}</span>
+                    <span>
+                        <button class="btn-edit" onclick="editMovement(${movement.id})">Edit</button>
+                        <button class="btn-delete" onclick="deleteMovement(${movement.id})">Delete</button>
+                    </span>
+                </span>
+    
+        </span>`;
         table.appendChild(row);
     });
 }
@@ -178,9 +196,127 @@ async function deleteMovement(id) {
     }
 }
 
+
+function showExpenseModal() {
+    let newExpenseButton = document.getElementById("btn-agregar-gasto");
+    newExpenseButton.addEventListener("click", () => {
+        let modalExpense = new bootstrap.Modal(document.getElementById("addExpenseModal"));
+        modalExpense.show();
+
+        let category = document.getElementById("")
+        let date = document.getElementById("income-date");
+        let income = document.getElementById("income-value");
+
+        let buttonSendIncome = document.getElementById("saveIncomeButton");
+        let url = "https://zenny.azurewebsites.net/api/v1/createMovement";
+
+
+        buttonSendIncome.addEventListener("click", async (e) => {
+            e.preventDefault();
+            console.log("hola");
+
+            let userId = id;
+
+            let newIncome = {
+                "id": 0,
+                "movementDate": date.value,
+                "userId": userId,
+                "value": income.value,
+                "categoriesId": 9,
+                "transactionTypesId": 1
+            };
+
+            try {
+                let response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newIncome)
+                });
+
+                console.log(response.status);
+
+                if (response.ok) {
+                    // Opcional: Procesar la respuesta si es exitosa
+                    const result = await response.json();
+                    console.log('Ingreso creado:', result);
+                } else {
+                    console.error('Error en la solicitud:', response.statusText);
+                }
+
+                // Cierra el modal después de guardar
+                modalIncome.hide();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+}
+
+
+function showIncomeModal() {
+    let newIncomeButton = document.getElementById("btn-agregar-ingreso");
+    newIncomeButton.addEventListener("click", () => {
+        let modalIncome = new bootstrap.Modal(document.getElementById("addIncomeModal"));
+        modalIncome.show();
+
+        let date = document.getElementById("income-date");
+        let income = document.getElementById("income-value");
+
+        let buttonSendIncome = document.getElementById("saveIncomeButton");
+        let url = "https://zenny.azurewebsites.net/api/v1/createMovement";
+
+
+        buttonSendIncome.addEventListener("click", async (e) => {
+            e.preventDefault();
+            console.log("hola");
+
+            let userId = id;
+
+            let newIncome = {
+                "id": 0,
+                "movementDate": date.value,
+                "userId": userId,
+                "value": income.value,
+                "categoriesId": 9,
+                "transactionTypesId": 1
+            };
+
+            try {
+                let response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newIncome)
+                });
+
+                console.log(response.status);
+
+                if (response.ok) {
+                    // Opcional: Procesar la respuesta si es exitosa
+                    const result = await response.json();
+                    console.log('Ingreso creado:', result);
+                } else {
+                    console.error('Error en la solicitud:', response.statusText);
+                }
+
+                // Cierra el modal después de guardar
+                modalIncome.hide();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    });
+}
+
+
 // Initialize dashboard on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = 123;  // Replace with actual user ID
+    const userId = id;  // Replace with actual user ID
+    showExpenseModal();
+    showIncomeModal();
     fetchCategories();
     fetchIncomes(userId);
     fetchExpenses(userId);
@@ -201,10 +337,7 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
 });
 function guardian() {
     let verification = localStorage.getItem("access")
-    if (verification == "true") {
-        window.location.href = "../views/dashboard.html"
-    }
-    else{
+    if (verification !== "true") {
         window.location.href = "../views/login.html"
     }
 }

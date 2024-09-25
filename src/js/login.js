@@ -94,3 +94,13 @@ function sendData(data) {
     localStorage.setItem("id", data.id)
     window.location.href = "../views/dashboard.html"
 }
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if(verification ==="true")
+    {
+        window.location.href = "../views/dashboard.html"
+    }
+    if (verificaiton === "0") {
+        window.location.href = "../views/userPlan.html"
+    }
+}
