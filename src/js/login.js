@@ -3,42 +3,94 @@ let password = document.getElementById("password");
 let form = document.getElementsByTagName("form");
 let passwordMessage = document.getElementById("password-message");
 
+let verificationEmail = false;
+let verificationPassword = false;
 
-let url = "enpoint for the database";
+let url = "https://zenny.azurewebsites.net/api/v2/User/Login"
 
-guardian()
+// guardian()
 form[0].addEventListener("submit", async (event) => {
 
     event.preventDefault();
-    await verification();
+    if (email.value == "") {
+        email.classList.add("is-invalid")
+        verificationEmail = false;
+    } else {
+        email.classList.remove("is-invalid")
+        verificationEmail = true;
+    }
+
+    if (password.value == "") {
+        password.classList.add("is-invalid")
+        verificationPassword = false;
+    } else {
+        password.classList.remove("is-invalid")
+        verificationPassword = true;
+    }
+    if (verificationEmail === true && verificationPassword === true) {
+        await verification(email, password);
+    }
+
 })
 
-async function verification() {
-    // let response = await fetch('${url}?email =${email.value}');
-    // let data = await response.json();
+async function verification(email, password) {
 
-    if (email.value === "" ) {
-        email.classList.add("is-invalid")
+    try {
+        let user = {
+            "email": email.value,
+            "password": password.value
+        }
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+
+        if (!response.ok) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario o contraseña invalidos',
+                text: 'Intentalo de nuevo',
+            });
+            const errorText = await response.text();
+            throw new Error(`Error: ${response.status}, ${errorText}`);
+
+
+        } else if (response.ok == null) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops... ¡Algo salio mal!',
+                text: 'Intentalo de nuevo',
+            });
+            throw new Error(`Error: ${response.status}`);
+        }
+        else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Bien hecho',
+                text: 'Dirigiendo al dashboard',
+                timer: 3000
+            }).then(async() => {
+                const data = await response.json();
+                console.log('Login successful:', data);
+                sendData(data)
+            })
+
+        }
+
+    } catch (error) {
+        console.error('Error logging in:', error);
     }
 
-    else if (email.value !== "") { email.classList.remove("is-invalid") }
-
-    if (password.value === "" ) { password.classList.add("is-invalid") }
-
-    else if (password.value !== "") { password.classList.remove("is-invalid") }
-
-    if (data.length === 1 && pasword.value == data[0].password) {
-        localStorage.setItem("access", true)
-        window.location.href = "./"
-    }
-    else {
-        errormessage.classList.add("is-invalid")
-    }
 }
 
-function guardian() {
-    let verification = localStorage.getItem("access");
-    if (verification == "true") {
-        window.location.href = "./"
-    }
+function sendData(data) {
+    localStorage.setItem("access", true)
+    localStorage.setItem("email", data.email)
+    localStorage.setItem("token", data.token)
+    localStorage.setItem("plan", data.subscription_type)
+    localStorage.setItem("id", data.id)
+    window.location.href = "../views/dashboard.html"
 }

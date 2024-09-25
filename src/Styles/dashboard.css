@@ -1,0 +1,246 @@
+:root {
+    --light-mint: #e2ffe9;
+    --mint-green: #c0e1c8;
+    --dark-pine: #0b2f14;
+    --light-green: #32a873;
+    --grape-blue: #6f86ff;
+    --red-error: #ee5454;
+    --dark-grey: #121212;
+  }
+
+/* General */
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Teko', sans-serif;
+}
+
+h1 {
+    color: var(--mint-green);
+    font-family: 'teko';
+    font-size: 35px;
+    display: flex;
+    margin-left: 30px;
+}
+
+h2{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: var(--light-green);
+    font-family: 'Alumni Sans';
+}
+
+h3 {
+    color: var(--light-green);
+    font-size: 2rem;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+
+.balance-container{
+    border: 2px solid var(--light-green);
+    border-radius: 15px;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.balance-container p {
+    font-size: 3rem;
+    color: var(--light-mint);
+}
+
+.navbar {
+    background-color: #32A873;
+}
+
+/* Gráficos y análisis botón */
+.btn-disabled {
+    background-color: var(--light-green);
+    color: var(--dark-grey);
+    border: 2px solid var(--mint-green);
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    cursor: not-allowed;
+    margin: 20px 0;
+    width: 80%;
+    opacity: 0.5;
+}
+
+.btn-disabled.active {
+    cursor: pointer;
+    opacity: 1;
+    background-color: var(--light-green);
+    color: var(--dark-grey);
+    border: 2px solid var(--mint-green);
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    margin: 20px 0;
+    width: 80%;
+}
+
+/* Filtros */
+.movements-filters {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.btn-filter {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+#revenue-filter{
+    background-color: var(--light-green);
+    border-radius: 15px;
+    font-size: 1.5rem;
+}
+#all-filter{
+    background-color: var(--dark-grey);
+    color: var(--light-green);
+    border: 2px solid var(--light-green);
+    border-radius: 15px;
+    font-size: 1.5rem;
+
+}
+#bills-filter{
+    background-color: var(--red-error);
+    border-radius: 15px;
+    font-size: 1.5rem;
+}
+
+.btn-filter.active {
+    background-color: #6F86FF;
+}
+
+/* Tabla de movimientos */
+.movimientos-tabla {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.movimientos-tabla div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--light-mint);
+}
+
+.movimientos-tabla div.income {
+    color: #32A873;
+    font-size: 1.5rem;
+}
+
+.movimientos-tabla div.expense {
+    color: #EE5454;
+    font-size: 1.5rem;
+}
+.edit-date {
+    background: none;
+    border: none;
+}
+.sticky-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-sticky-green {
+    background-color: #32A873;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-sticky-red {
+    background-color: #EE5454;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+
+
+
+/* Modal styling */
+.modal-content {
+    background-color: var(--dark-grey);
+    border-radius: 15px;
+    color: var(--light-mint);
+}
+
+.modal-header h2 {
+    color: var(--light-green);
+    font-family: 'Teko', sans-serif;
+    font-size: 35px;
+}
+
+.form-label {
+    color: var(--light-green);
+    font-family: 'Alumni Sans';
+}
+
+.form-select, .form-control {
+    background-color: var(--dark-grey);
+    color: var(--light-mint);
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+}
+
+.input-group-text {
+    background-color: var(--dark-grey);
+    color: var(--light-green);
+    border: 2px solid var(--light-green);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--light-green);
+    color: var(--light-green);
+}
+
+.btn-primary {
+    background-color: var(--light-green);
+    color: var(--dark-grey);
+}
+
+.modal-footer button {
+    width: 48%;
+    padding: 10px;
+}
+
+
+
+@media (min-width: 768px) {
+
+    .saldo-container{
+        border: 2px solid var(--light-green);
+        border-radius: 15px;
+        margin: 0px 30px;   
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    
+}

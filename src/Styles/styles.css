@@ -1,0 +1,170 @@
+:root {
+  --light-mint: #e2ffe9;
+  --mint-green: #c0e1c8;
+  --dark-pine: #0b2f14;
+  --light-green: #32a873;
+  --grape-blue: #6f86ff;
+  --red-error: #ee5454;
+  --dark-grey: #121212;
+}
+
+body {
+  background-color: #121212;
+  color: #e2ffe9;
+  font-family: "Teko", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  background-color: var(--light-green); 
+  width: 100%; 
+  padding: 10px 20px;
+}
+
+.navbar-collapse {
+  background-color: #32a873; 
+}
+
+.logo {
+  height: 70px;
+}
+
+.navbar-toggler {
+  border-color: transparent;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+.nav-item {
+  font-size: 24px;
+}
+.nav-item .btn-outline-light {
+  border: 2px solid var(--light-mint);
+  color: var(--light-green);
+  background-color: #e2ffe9;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.nav-item .btn-light {
+  border: 2px solid var(--light-mint);
+  color: #fff;
+  align-items: center;
+  font-size: 32px;
+}
+
+.nav-item .btn-light i {
+  font-size: 1.5rem;
+  color: #32a873;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: 1.2;
+  margin-top: 20px;
+  margin-left: 25px;
+  color: #c0e1c8;
+  text-align: left;
+}
+
+.person-image {
+  height: 100%;
+  width: 100%;
+}
+
+.vectores{
+  position: fixed;
+  z-index: -200;
+  width: 160vh;
+  bottom: -6px;
+  left: -200px; 
+}
+
+footer {
+  background-color: #32a873;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  font-size: 24px;
+}
+
+.btn-success {
+  background-color: #32a873;
+  border: 2px solid var(--light-mint);
+  margin-bottom: 15px;
+  font-size: 28px;
+  margin: 0px 25px 25px;
+}
+
+.btn-success:hover {
+  background-color: #32a873;
+}
+.button-create-account {
+  display: flex;
+  justify-content: center;
+}
+.button-create-account a {
+    padding: 5px 25px 5px 25px;
+}
+
+/* Versión desktop */
+
+@media (min-width: 768px) {
+  .navbar {
+    font-size: 36px;
+  }
+
+  .text-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .text-center h1 {
+    font-size: 90px;
+    text-align: left;
+  }
+
+  .landing-page {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .person-image {
+    margin-left: 100px;
+    width: 30%;
+    height: 80vh;
+  }
+  
+  .vectores{
+    position: absolute;
+    z-index: -200;
+    left: 20px;
+    top: -200px;
+    width: 91vw;
+    
+  }
+
+  .button-create-account {
+    display: flex;
+    justify-content: center;
+  }
+  .footer p {
+    font-size: 24px;
+  }
+}
