@@ -11,40 +11,25 @@ This is only the web application, if you want to check the backend go here : [Ze
 
 Our main goal as an app is that any kind of person could be able to manage their finances through our application. To achieve that, we offer Simplicity and Comfort to each of our users through an intuitive and responsive web interface that can be easily used by anyone and on any device
 
-<style>
-    .round-avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    .round-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-
 ## Authors
 
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/137262730?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/137262730?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@luisaferRP](https://www.github.com/luisaferRP)
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/109235605?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/109235605?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@jtorova5](https://www.github.com/jtorova5)
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/75854211?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/75854211?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@SanDaws](https://www.github.com/sanDaws)
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/138082726?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/138082726?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@MajoPino](https://www.github.com/MajoPino)
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/71363955?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/71363955?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@dfelipesr46](https://www.github.com/dfelipesr46)
 - <div class="round-avatar">
-    <img src="https://avatars.githubusercontent.com/u/160916037?v=4" alt="Avatar">
+    <img src="https://avatars.githubusercontent.com/u/160916037?v=4" width="30px" height="30px" alt="Avatar">
   </div> [@The-G-Man-Half-Life](https://www.github.com/The-G-Man-Half-Life)
 ## Zenny as the project
 ### Why do we exist?
