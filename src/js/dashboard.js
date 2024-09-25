@@ -1,4 +1,4 @@
-import { utility, GenerateInfo } from "./Diagrams/IncomOutcomeDgr.js";
+import {utility} from './Diagrams/IncomOutcomeDgr'
 
 // Base URL del API
 const baseURL = "https://zenny.azurewebsites.net/api/v2";
@@ -17,7 +17,7 @@ async function fetchCategories() {
         console.error('Error fetching categories:', error);
     }
 
-
+}
 
 // Function to update the current date
 function dateUpdate() {
@@ -62,7 +62,7 @@ function renderMovements(filter = 'all') {
             row.classList.add(mov.tipe === 'ingreso' ? 'income' : 'expense');
             row.classList.add("d-flex");
             row.classList.add("justify-content-between");
-
+        
             if (row.classList.contains("income")) {
                 row.innerHTML += `                
                 <span class="w-50 d-flex justify-content-between">
@@ -89,8 +89,9 @@ function renderMovements(filter = 'all') {
                 </span>`;
                 table.appendChild(row);
             }
+            
 
-        });
+        })}}
 
 
 // Fetch incomes from API
