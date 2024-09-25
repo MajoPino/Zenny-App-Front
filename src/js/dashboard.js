@@ -14,6 +14,15 @@ async function fetchCategories() {
     } catch (error) {
         console.error('Error fetching categories:', error);
     }
+
+
+
+// Function to update the current date
+function dateUpdate() {
+    const today = new Date();
+    const options = { day: 'numeric', month: 'long' };
+    const formattedDate = today.toLocaleDateString('es-ES', options).toUpperCase();
+    document.getElementById('today').innerText = formattedDate;
 }
 
 // Function to populate categories in the select dropdown
@@ -202,3 +211,12 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
     };
     createMovement(movementData);
 });
+function guardian() {
+    let verification = localStorage.getItem("access")
+    if (verification == "true") {
+        window.location.href = "../views/dashboard.html"
+    }
+    else{
+        window.location.href = "../views/login.html"
+    }
+}

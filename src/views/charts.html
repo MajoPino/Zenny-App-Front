@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Zenny - Personal Finances Webpage" />
+    <meta name="keywords" content="riwi, zenny, Zenny, finances, money, budget, management" />
+    <meta name="sitedomain" content="https://zenny.com/" />
+    <meta name="organization" content="Riwi_Gates" />
+    <meta name="author" content="MajoPino, dfelipesr46, luisaferRP, SanDaws, The-G-Man-Half-Life, jtorova5" />
+    <meta name="designer" content="MajoPino, dfelipesr46, The-G-Man-Half-Life" />
+    <meta name="copyright" content="© 2024 Zenny. Todos los derechos reservados" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="revisit-after" content="15days" />
+    <link rel="shortcut icon" href="../../public/imgs/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/src/Styles/charts.css" rel="stylesheet" />
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img src="/public/imgs/ZennyBannerMint 1.png" alt="Zenny logo" class="logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light rounded-pill" href="/src/views/signup.html">Crea tu
+                            cuenta!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light rounded-pill" href="/src/views/Login.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                            </svg>
+                            Ingresa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+
+    <main>
+        <section>
+            <div id="dateMonth">
+            </div>
+        </section>
+        <section>
+            <div class="chart-box-1">
+                <h2 class="mb-1">Gastos por categoría</h2>
+                <canvas id="chart1"></canvas>
+                <p class="d-inline-flex gap-1">
+                    <button class="btn bi bi-arrow-down-square-fill" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseExample">
+                    </button>
+                </p>
+                <div class="collapse" id="collapseCategory">
+                    <div class="card card-body tableChart1">
+                        <h2 class="head1">
+                            Gastos por categoría
+                        </h2>
+                        <table>
+                            <tbody id="BarchartOne">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-box-2">
+                <h2 class="mb-1">Gastos por porcentaje</h2>
+                <canvas id="chart2"></canvas>
+                <p class="d-inline-flex gap-1">
+                    <button class="btn bi bi-arrow-down-square-fill" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePercent" aria-expanded="false" aria-controls="collapseExample">
+                    </button>
+                </p>
+                <div class="collapse" id="collapsePercent">
+                    <div class="card card-body tableChart1">
+                        <table>
+                            <h2 class="head1">
+                                Gastos por porcentaje
+                            </h2>
+                            <tbody id="PieSpents">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-box-3">
+                <h2 class="mb-1">Gastos vs Ingresos</h2>
+                <canvas id="chart3"></canvas>
+                <p class="d-inline-flex gap-1">
+                    <button class="btn bi bi-arrow-down-square-fill" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFinal" aria-expanded="false" aria-controls="collapseExample">
+                    </button>
+                </p>
+                <div class="collapse" id="collapseFinal">
+                    <div class="card card-body tableChart1">
+                        <table>
+                            <h2 class="head1">
+                                Gastos vs Ingresos
+                            </h2>
+                            <tbody id="IncomeOutcome">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-light py-3">
+        © Zenny - 2024 - Todos los derechos reservados
+    </footer>
+    <script type="module" src="../js/chart1.js"></script>
+    <script type="module" src="../js/chart2.js"></script>
+    <script type="module" src="../js/chart3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

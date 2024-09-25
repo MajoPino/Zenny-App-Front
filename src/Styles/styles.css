@@ -83,7 +83,16 @@ h1 {
 }
 
 .person-image {
+  height: 100%;
   width: 100%;
+}
+
+.vectores{
+  position: fixed;
+  z-index: -200;
+  width: 160vh;
+  bottom: -6px;
+  left: -200px; 
 }
 
 footer {
@@ -138,9 +147,19 @@ footer {
 
   .person-image {
     margin-left: 100px;
-    width: 400px;
-    height: 479px;
+    width: 30%;
+    height: 80vh;
   }
+  
+  .vectores{
+    position: absolute;
+    z-index: -200;
+    left: 20px;
+    top: -200px;
+    width: 91vw;
+    
+  }
+
   .button-create-account {
     display: flex;
     justify-content: center;
