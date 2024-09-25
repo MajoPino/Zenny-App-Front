@@ -1,4 +1,4 @@
-
+import { utility, GenerateInfo } from "./Diagrams/IncomOutcomeDgr.js";
 
 // Function to update the current date
 function dateUpdate() {
@@ -8,7 +8,17 @@ function dateUpdate() {
     document.getElementById('today').innerText = formattedDate;
 }
 
-let totalBalance = 2500000;
+let balanceId = localStorage.getItem('id');
+let arrayBalance = await GenerateInfo(balanceId);
+let totalBalance = await utility(arrayBalance);
+let userName = localStorage.getItem('name');
+
+// Update the current balance and total balance
+document.getElementById('total-balance').innerText = `$${totalBalance.toLocaleString('es-CO')}`;
+
+// Update the user name
+document.getElementById('usuario-nombre').innerText = `Hola, ${userName}!`;
+
 const movements = [];  // Initialize with no movements
 let currentEditingIndex = null;  // To track the index of the movement being edited
 
@@ -229,12 +239,3 @@ document.addEventListener('DOMContentLoaded', () => {
         enableGraphicsButton();
     }
 });
-function guardian() {
-    let verification = localStorage.getItem("access")
-    if (verification == "true") {
-        window.location.href = "../views/dashboard.html"
-    }
-    else{
-        window.location.href = "../views/login.html"
-    }
-}

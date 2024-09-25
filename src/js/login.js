@@ -40,6 +40,7 @@ async function verification(email, password) {
             "email": email.value,
             "password": password.value
         }
+
         let response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -68,7 +69,9 @@ async function verification(email, password) {
         }
         else {
             Swal.fire({
-                icon: 'success',
+                position: "top-center",
+                icon: "success",
+                showConfirmButton: false,
                 title: 'Bien hecho',
                 text: 'Dirigiendo al dashboard',
                 timer: 3000
@@ -77,7 +80,6 @@ async function verification(email, password) {
                 console.log('Login successful:', data);
                 sendData(data)
             })
-
         }
 
     } catch (error) {
@@ -92,5 +94,7 @@ function sendData(data) {
     localStorage.setItem("token", data.token)
     localStorage.setItem("plan", data.subscription_type)
     localStorage.setItem("id", data.id)
+    localStorage.setItem("name",data.name)
+
     window.location.href = "../views/dashboard.html"
 }
