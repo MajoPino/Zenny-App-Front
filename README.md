@@ -1,4 +1,4 @@
-
+![Zenny](./public/imgs/ZennyBannerMint 1.png)
 # Zenny-Web-App
 
 ## What is Zenny?
