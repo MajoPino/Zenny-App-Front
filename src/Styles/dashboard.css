@@ -61,6 +61,38 @@ h1, h2, h3 {
     background-color: #32A873;
 }
 
+.totals-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    color: #E2FFE9; /* Light mint */
+    border-radius: 10px;
+  }
+  
+  .total-expenses, .total-income {
+    text-align: center;
+  }
+  
+  .total-expenses h3 {
+    margin: 0;
+    color: var(--red-error); /* Grape blue */
+  }
+
+  .total-income h3{
+    margin: 0;
+    color: var(--light-green); /* Grape blue */
+  }
+  
+  #total-income {
+    font-size: 1.5em;
+    color: #32A873; /* Light green */
+  }
+  #total-expenses{
+    font-size: 1.5em;
+    color: var(--red-error); /* Light green */
+  }
+  
+
 /* Gráficos y análisis botón */
 .btn-disabled {
     background-color: var(--light-green);
