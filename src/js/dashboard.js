@@ -1,7 +1,10 @@
+// Base URL del API
+const baseURL = "https://zenny.azurewebsites.net/api/v2";
+
 // Fetch categories from API
 async function fetchCategories() {
     try {
-        const response = await fetch('https://zenny.azurewebsites.net/api/Category');
+        const response = await fetch(`${baseURL}/Category`);
         if (response.ok) {
             const categories = await response.json();
             populateExpenseCategories(categories);
@@ -28,7 +31,7 @@ function populateExpenseCategories(categories) {
 // Fetch incomes from API
 async function fetchIncomes(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getIncomes/${userId}`);
+        const response = await fetch(`${baseURL}/movement/getIncomes/${userId}`);
         if (response.ok) {
             const incomes = await response.json();
             renderMovements(incomes, 'ingreso');
@@ -43,7 +46,7 @@ async function fetchIncomes(userId) {
 // Fetch expenses from API
 async function fetchExpenses(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getExpenses/${userId}`);
+        const response = await fetch(`${baseURL}/movement/getExpenses/${userId}`);
         if (response.ok) {
             const expenses = await response.json();
             renderMovements(expenses, 'gasto');
@@ -58,7 +61,7 @@ async function fetchExpenses(userId) {
 // Fetch total incomes from API
 async function fetchTotalIncomes(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getTotalIncomes/${userId}`);
+        const response = await fetch(`${baseURL}/movement/getTotalIncomes/${userId}`);
         if (response.ok) {
             const totalIncomes = await response.json();
             document.getElementById('total-incomes').innerText = `$${totalIncomes.toLocaleString('es-CO')}`;
@@ -73,7 +76,7 @@ async function fetchTotalIncomes(userId) {
 // Fetch total expenses from API
 async function fetchTotalExpenses(userId) {
     try {
-        const response = await fetch(`https://zenny.azurewebsites.net/api/v2/movement/getTotalExpenses/${userId}`);
+        const response = await fetch(`${baseURL}/movement/getTotalExpenses/${userId}`);
         if (response.ok) {
             const totalExpenses = await response.json();
             document.getElementById('total-expenses').innerText = `$${totalExpenses.toLocaleString('es-CO')}`;
@@ -88,7 +91,7 @@ async function fetchTotalExpenses(userId) {
 // Create new movement via API
 async function createMovement(movementData) {
     try {
-        const response = await fetch('https://zenny.azurewebsites.net/api/createMovement', {
+        const response = await fetch(`${baseURL}/createMovement`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -137,7 +140,7 @@ async function editMovement(id) {
         };
 
         try {
-            const response = await fetch(`https://zenny.azurewebsites.net/api/MovementUpdate/${id}`, {
+            const response = await fetch(`${baseURL}/MovementUpdate/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -162,7 +165,7 @@ async function deleteMovement(id) {
     const confirmed = confirm("Are you sure you want to delete this movement?");
     if (confirmed) {
         try {
-            const response = await fetch(`https://zenny.azurewebsites.net/api/delete/${id}`, {
+            const response = await fetch(`${baseURL}/delete/${id}`, {
                 method: 'DELETE'
             });
 
@@ -180,7 +183,7 @@ async function deleteMovement(id) {
 
 // Initialize dashboard on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = 1;  // Replace with actual user ID
+    const userId = 2;  // Replace with actual user ID
     fetchCategories();
     fetchIncomes(userId);
     fetchExpenses(userId);
@@ -195,7 +198,7 @@ document.getElementById('saveExpenseButton').addEventListener('click', function 
         concept: document.getElementById('expense-category').value,
         value: parseFloat(document.getElementById('expense-value').value),
         date: document.getElementById('expense-date').value,
-        userId: 1  // Replace with actual user ID
+        userId: 2  // Replace with actual user ID
     };
     createMovement(movementData);
 });
