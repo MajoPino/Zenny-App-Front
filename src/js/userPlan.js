@@ -7,7 +7,6 @@ boxBasic.addEventListener("click",async function (e) {
     e.preventDefault();
     localStorage.setItem("access","1")
     let user = {
-        "id":0,
         "Name": localStorage.getItem("name"),
         "lastName": localStorage.getItem("lastName"),
         "email": localStorage.getItem("email"),
@@ -21,6 +20,7 @@ boxBasic.addEventListener("click",async function (e) {
         },
         body: JSON.stringify(user),
     });
+    localStorage.removeItem("access")
     localStorage.removeItem("name")
     localStorage.removeItem("lastName")
     localStorage.removeItem("email")
@@ -29,7 +29,7 @@ boxBasic.addEventListener("click",async function (e) {
 })
 
 
-boxPremium.addEventListener("click",function (e) {
+boxPremium.addEventListener("click",async function (e) {
     e.preventDefault();
     
     localStorage.setItem("access","2")
@@ -39,7 +39,7 @@ boxPremium.addEventListener("click",function (e) {
 function guardian() {
     let verification = localStorage.getItem("access")
 
-    if(verification !== "0")
+    if(verification != "0")
     {
         window.location.href = "../../index.html"
     }
