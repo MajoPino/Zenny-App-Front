@@ -1,4 +1,5 @@
 <img src="./public/imgs/ZennyBannerMint 1.png" alt="zenny">
+
 # Zenny-Web-App
 
 ## What is Zenny?
